@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Código enviado</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Inter, sans-serif; 
+      background-image:url(../imagens/login.png);
+      background-size: 100% auto;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; 
+    }
+    .container {
+      width: 419px;
+      height: 405px; 
+      margin-right: 80px;
+      margin-left: auto;
+      margin-top: 15px; 
+      margin-bottom: 50px; 
+      background-color: white; 
+      border-radius: 10px; 
+      padding: 20px; 
+      box-sizing: border-box; 
+      text-align: center; 
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); 
+    }
+    h1 {
+      font-size: 40px; 
+    }
+    p {
+      color: #858585;
+    }
+    input[type="text"] {
+      background-color: #F3F4E6; 
+      width: 80%; 
+      padding: 8px; 
+      margin: 10px 0; 
+      border-bottom: 20px; 
+      border-radius: 5px; 
+      border: 1px solid #F3F4E6; 
+      outline: none; 
+      font-size: 20px ; 
+      text-align: center; 
+      color: #858585; 
+    }
+    .btn-continue {
+      background-color: #FFDE7E; 
+      color: #8B8D30; 
+      font-size: 17px; 
+      padding: 10px 50px; 
+      border: none; 
+      border-radius: 5px; 
+      cursor: pointer;
+    }
+    .btn-login {
+      background-color: #B6F3A0; 
+      color: #607447; 
+      font-size: 17px; 
+      padding: 10px 50px; 
+      border: none; 
+      border-radius: 5px; 
+      cursor: pointer; 
+      
+    }
+    hr {
+      border: none; 
+      border-top: 1px solid #000000; 
+      margin-top: 10px; 
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <script>
+
+    function Entrar() {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <div class="container">
+    <h1>Código enviado</h1>
+    <p>Foi enviado um código para você alterar a senha <br>da sua conta</p>
+    <input type="text" placeholder="Digite o código" />
+    <button class="btn-continue">Continuar</button>
+    <hr />
+    <button class="btn-login" onclick="Entrar()">Retornar ao Login</button>
+  </div>
+</body>
+</html>
