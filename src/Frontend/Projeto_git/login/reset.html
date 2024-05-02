@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resetar Senha</title>
+  <link rel="stylesheet" href="/css/reset_style.css">
+</head>
+<body>
+  <script>
+    function Entrar() {
+      window.location.href = "login.html";
+    }
+    function Codigo(){
+        window.location.href = "reset_02.html";
+    }
+  </script>
+  <div class="container">
+    <h1>Esqueci minha senha</h1>
+    <p style="color: #858585;">Insira seu e-mail, telefone ou  nome de <br> usuário para enviarmos um código para <br>  modificar sua senha</p>
+    <input type="text" placeholder="Email ou telefone" />
+    <button class="btn-reset" onclick="Codigo()">Receber Código</button>
+    <hr />
+    <button class="btn-login" onclick="Entrar()">Retornar ao Login</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="/css/login_style.css">
+</head>
+<body>
+
+  <script>
+
+    function criarConta() { window.location.href = "cadastro.html"; }
+
+     </script>
+
+
+
+  <div class="container">
+    <h1>Login</h1>
+    <input type="text" placeholder="Email ou telefone" />
+    <input type="password" placeholder="Senha" />
+    <button class="btn-login">Entrar</button>
+    <hr />
+    <button class="btn-signup" onclick="criarConta()">Criar Nova Conta</button>
+
+    <a class="linkReset" href="reset.html">
+      <p class="forgot-password">Esqueceu a <br> senha?</p>
+    </a>
+    
+  </div>
+</body>
+</html>
