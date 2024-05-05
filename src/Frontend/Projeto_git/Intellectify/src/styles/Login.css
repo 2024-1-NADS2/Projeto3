@@ -1,17 +1,9 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Inter, sans-serif;
-  background-image: url('../imagens/login.png');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.container {
+.login-container {
+  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 419px;
   height: 485px;
   margin-right: 250px;
