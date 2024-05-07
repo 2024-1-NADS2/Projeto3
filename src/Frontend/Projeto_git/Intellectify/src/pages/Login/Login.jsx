@@ -1,5 +1,5 @@
-import "../styles/Login.css"
-import BackgroundImage from "./BackgroundImage.jsx"
+import "Login.css"
+import BackgroundImage from "../../components/BackgroundImage/BackgroundImage.jsx"
 
 const Login = () => {
   return (
