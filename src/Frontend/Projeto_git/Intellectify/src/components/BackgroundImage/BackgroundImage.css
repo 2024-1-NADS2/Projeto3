@@ -1,5 +1,5 @@
 .BackgroudImage{
-  background-image: url('../assets/login.png');
+  background-image: url('../../assets/login.png');
   background-size: 100%;
   background-position: center;
   display: flex;

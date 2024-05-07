@@ -1,4 +1,4 @@
-import "Login.css"
+import "./Login.css"
 import BackgroundImage from "../../components/BackgroundImage/BackgroundImage.jsx"
 
 const Login = () => {
