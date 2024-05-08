@@ -17,23 +17,9 @@
 
 h1 {
   font-size: 40px;
+  margin-top: 10px;
 }
-
-input[type="text"],
-input[type="password"] {
-    background-color: #F3F4E6; 
-    width: 80%; 
-    padding: 8px; 
-    margin: 10px;
-    border-bottom: 20px; 
-    border-radius: 5px; 
-    border: 1px solid #F3F4E6; 
-    outline: none; 
-    font-size: 20px ; 
-    text-align: center; 
-    color: #858585; 
-}
-
+/*
 .btn-login {
   background-color: #FFDE7E;
   color: #8B8D30;
@@ -84,4 +70,4 @@ hr {
     width: 80%;
     height: auto;
 }
-}
+} */

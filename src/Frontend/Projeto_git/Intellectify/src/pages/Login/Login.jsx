@@ -1,22 +1,16 @@
 import "./Login.css"
 import BackgroundImage from "../../components/BackgroundImage/BackgroundImage.jsx"
+import Input from "../../components/Form/TextInput/TextInput.jsx"
 
 const Login = () => {
   return (
     <div>
       <BackgroundImage/>
       <div className="login-container">
-      <h1>Login</h1>
-      <input type="text" placeholder="Email ou telefone" />
-      <input type="password" placeholder="Senha" />
-      <button className="btn-login">Entrar</button>
-      <hr />
-      <button className="btn-signup" onclick="criarConta()">Criar Nova Conta</button>
-
-      <a className="linkReset" href="reset.html">
-        <p className="forgot-password">Esqueceu a senha?</p>
-      </a>
-    </div>
+        <h1>Login</h1>
+        <Input type="text" name="name" placeholder="Email ou telefone"/>
+        <Input type="text" name="name" placeholder="Senha"/>
+      </div>
     </div>
   )
 }

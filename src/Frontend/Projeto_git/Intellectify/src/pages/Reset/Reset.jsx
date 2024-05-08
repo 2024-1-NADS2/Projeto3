@@ -1,4 +1,4 @@
-import "../styles/Reset.css"
+import "../Reset.css"
 
 const Reset = () => {
   return (
