@@ -1,4 +1,25 @@
-body {
+h1 {
+  font-size: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.logar{
+  top: 465px;
+  right: 0px;
+  position: absolute;
+}
+
+.logar h1{
+  width: max-content;
+  font-size: 22.5px;
+}
+
+.logar Link{
+  color: #F5CA4B;
+}
+
+/* body {
   margin: 0;
   padding: 0;
   font-family: Inter, sans-serif; 
@@ -110,4 +131,4 @@ h1 {
 .account-CT a{
   color: #F5CA4B;
   text-decoration: none;
-}
+} */

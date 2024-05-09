@@ -1,7 +1,12 @@
 .BackgroudImage{
   background-image: url('../../assets/login.png');
+  position: relative;
   background-size: cover;
   background-position: center;
-  display: flex;
   height: 100vh;
 }
+
+/* 
+@media Lembrar
+background-position:calc(100% - 20px + 396px);
+*/

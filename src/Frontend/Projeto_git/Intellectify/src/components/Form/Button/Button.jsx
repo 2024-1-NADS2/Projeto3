@@ -1,9 +1,11 @@
-import "./Button.css"
+import "./Button.css"; // Estilo do botão
 
-const Button = () => {
+const Button = ({ onClick, children }) => {
   return (
-    <div>Button</div>
-  )
-}
+    <button className="button" onClick={onClick}>
+      {children}
+    </button>
+  );
+};
 
-export default Button
+export default Button;

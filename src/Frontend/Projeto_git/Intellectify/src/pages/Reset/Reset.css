@@ -1,4 +1,4 @@
-.reset-container {
+/* .reset-container {
   width: 419px;
   height: 459px; 
   margin-right: 250px;
@@ -55,4 +55,13 @@ hr {
   border: none; 
   border-top: 1px solid #000000; 
   margin-top: 08px; 
+} */
+h1 {
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+p{
+  color: #858585;
 }

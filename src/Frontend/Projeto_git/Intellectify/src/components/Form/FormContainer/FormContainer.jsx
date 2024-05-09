@@ -1,8 +1,11 @@
+import { Children } from "react"
 import "./FormContainer.css"
 
-const FormContainer = () => {
+const FormContainer = ({children}) => {
   return (
-    <div className='FormContainer'></div>
+    <div className='form-container'>
+      {children}
+    </div>
   )
 }
 

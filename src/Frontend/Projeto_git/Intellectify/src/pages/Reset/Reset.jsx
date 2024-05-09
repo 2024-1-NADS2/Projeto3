@@ -1,16 +1,22 @@
-import "../Reset.css"
+import "./Reset.css"
+import BackgroundImage from "../../components/BackgroundImage/BackgroundImage.jsx"
+import FormContainer from "../../components/Form/FormContainer/FormContainer.jsx"
+import Input from "../../components/Form/TextInput/TextInput.jsx"
+import Button from "../../components/Form/Button/Button.jsx"
 
 const Reset = () => {
   return (
-    <div className="reset-container">
-      <h1>Esqueci minha senha</h1>
-      <p style="color: #858585;">Insira seu e-mail, telefone ou nome de usuário para enviarmos um código para modificar sua senha</p>
-      <input type="text" placeholder="Email ou telefone" />
-      <button className="btn-reset" onclick="Codigo()">Receber Código</button>
-      <hr />
-      <button className="btn-login" onclick="Entrar()">Retornar ao Login</button>
+    <div>
+      <BackgroundImage/>
+      <FormContainer>
+        <h1>Esqueci minha senha</h1>
+        <p>Insira seu e-mail ou telefone ou nome de <br/> usuário para enviarmos um código para<br/> modificar sua senha</p>
+        <Input type="text" name="email" placeholder="Email"/>
+        <Button to="/feed">Solicitar Código</Button>
+      </FormContainer>
     </div>
   )
 }
+
 
 export default Reset

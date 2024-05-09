@@ -1,42 +1,26 @@
-.login-container {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 135px;
-  right: 95px;
-  height: auto;
-  width: auto;
-  margin: 0 auto;
-  background-color: #fff;
-  text-align: center;
-  border-radius: 20px;
-  box-sizing: border-box;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-  align-items: center;
-}
-
 h1 {
   font-size: 40px;
   margin-top: 10px;
-}
-/*
-.btn-login {
-  background-color: #FFDE7E;
-  color: #8B8D30;
-  font-size: 17px;
-  padding: 10px 50px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px; 
-  transition: 0.5;
+  margin-bottom: 10px;
 }
 
-.btn-login:hover, .btn-signup:hover{
-    opacity: 0.8;
+.cadastre-se{
+  top: 280px;
+  right: 0px;
+  position: absolute;
 }
 
-.btn-signup {
+.cadastre-se h1{
+  width: max-content;
+  font-size: 20px;
+}
+
+.cadastre-se Link{
+  color: #F5CA4B;
+}
+
+
+/* .btn-signup {
   background-color: #B6F3A0;
   color: #607447;
   font-size: 17px;
