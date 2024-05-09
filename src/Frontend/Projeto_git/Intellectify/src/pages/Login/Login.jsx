@@ -10,12 +10,12 @@ const Login = () => {
   return (
     <div>
       <BackgroundImage/>
-        <FormContainer>
-          <h1>Login</h1>
-          <Input type="text" name="email" placeholder="Email"/>
-          <Input type="text" name="senha" placeholder="Senha"/>
-          <Button to="/feed">Entrar</Button>
-        </FormContainer>
+      <FormContainer>
+        <h1>Login</h1>
+        <Input type="text" name="email" placeholder="Email"/>
+        <Input type="text" name="senha" placeholder="Senha"/>
+        <Button to="/feed">Entrar</Button>
+      </FormContainer>
       <div className="cadastre-se">
         <FormContainer>
           <h1>Não tem conta? <span><Link to="/cadastro">Cadastre-se!</Link></span></h1>

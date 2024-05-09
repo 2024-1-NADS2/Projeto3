@@ -2,6 +2,8 @@
   top: 178px;
   right: 125px;
   position: absolute;
+  display: flex;
+  flex-direction: column;
   height: auto;
   width: auto;
   margin: 0 auto;
@@ -13,3 +15,26 @@
   align-items: center;
   padding: 10px;;
 }
+
+@media screen and (max-width:768px) {
+  .form-container{
+    top: 178px;
+    right: 25px;
+  }
+}
+@media screen and (max-width:425px) {
+  .form-container{
+    right: 67px; 
+  }
+}
+@media screen and (max-width:375px) {
+  .form-container{
+    right: 48px; 
+  }
+}
+@media screen and (max-width:320px) {
+  .form-container{
+    right: 20px; 
+  }
+}
+
