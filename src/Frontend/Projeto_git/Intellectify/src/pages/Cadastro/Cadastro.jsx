@@ -10,7 +10,7 @@ const Cadastro = () => {
     <BackgroundImage/>
     <div className="card-login">
       <FormContainer>
-        <h1>Cadastro</h1>
+        <h1 id="title">Cadastro</h1>
         <div className="fullname">
           <Input className="texte" type="text" name="nome" placeholder="Nome"/>
           <Input className="texte" type="text" name="sobrenome" placeholder="Sobrenome"/>
@@ -23,7 +23,7 @@ const Cadastro = () => {
     </div>
     <div className="logar">
       <FormContainer>
-        <h1>Ja tem uma conta? <Link to="/">Logar!</Link></h1>
+        <h1>Ja tem uma conta? <Link to="/" className="link">Logar!</Link></h1>
       </FormContainer>
     </div>
   </div>
