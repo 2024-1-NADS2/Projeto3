@@ -1,0 +1,18 @@
+#title {
+  font-size: 30px;
+}
+
+.cadastre-se{
+  top: 280px;
+  right: 0px;
+  position: absolute;
+}
+
+.cadastre-se h1{
+  width: max-content;
+  font-size: 20px;
+}
+
+.link{
+  color: #F5CA4B;
+}

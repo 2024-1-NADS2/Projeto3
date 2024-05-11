@@ -1,0 +1,22 @@
+.title {
+  font-size: 30px;
+}
+.fullname{
+  display: flex;
+}
+
+.logar{
+  top: 485px;
+  right: 0px;
+  position: absolute;
+}
+
+.logar h1{
+  width: max-content;
+  font-size: 22.5px;
+}
+
+.link{
+  color: #F5CA4B;
+}
+

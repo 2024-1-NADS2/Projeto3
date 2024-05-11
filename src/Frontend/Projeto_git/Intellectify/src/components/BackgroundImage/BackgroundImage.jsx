@@ -1,4 +1,4 @@
-import "../styles/BackgroundImage.css"
+import "./BackgroundImage.css"
 
 const BackgroundImage = () => {
   return (
