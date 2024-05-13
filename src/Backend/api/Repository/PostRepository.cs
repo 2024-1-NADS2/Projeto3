@@ -20,5 +20,10 @@ namespace api.Repository
         {
             return await _context.Posts.ToListAsync();
         }
+
+        public async Task<Post?> GetByIdAsync(int id)
+        {
+            return await _context.Posts.FindAsync(id);
+        }
     }
 }
