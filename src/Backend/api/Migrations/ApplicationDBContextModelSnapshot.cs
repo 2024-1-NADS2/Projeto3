@@ -33,9 +33,6 @@ namespace api.Migrations
                     b.Property<DateTime>("Criado_em")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Criado_por")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("Curtidas")
                         .HasColumnType("int");
 
@@ -44,9 +41,6 @@ namespace api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("PostId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Post_id")
                         .HasColumnType("int");
 
                     b.Property<string>("Texto")
@@ -75,9 +69,6 @@ namespace api.Migrations
 
                     b.Property<DateTime>("Criado_em")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Criado_por")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Curtidas")
                         .HasColumnType("int");

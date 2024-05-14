@@ -18,7 +18,28 @@ namespace api.Mappers
                 Imagem = postModel.Imagem,
                 Curtidas = postModel.Curtidas,
                 Criado_em = postModel.Criado_em,
-                Criado_por = postModel.Criado_por,
+                UsuarioEmail = postModel.UsuarioEmail,
+                Comentarios = postModel.Comentarios.Select(c => c.ToComentarioDto()).ToList(),
+            };
+        }
+
+        public static Post ToPostFromCreate(this CreatePostDto postDto, string email)
+        {
+            return new Post
+            {
+                Texto = postDto.Texto,
+                Imagem = postDto.Imagem,
+                UsuarioEmail = email,
+            };
+        }
+
+        public static Post ToPostFromUpdate(this UpdatePostRequestDto postDto)
+        {
+            return new Post
+            {
+                Texto = postDto.Texto,
+                Imagem = postDto.Imagem,
+                Curtidas = postDto.Curtidas,
             };
         }
     }

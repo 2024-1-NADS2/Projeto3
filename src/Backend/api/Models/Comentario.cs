@@ -12,9 +12,9 @@ namespace api.Models
         public string Imagem { get; set; } = string.Empty;
         public int Curtidas { get; set; }
         public DateTime Criado_em { get; set; } = DateTime.Now;
-        public int? Post_id { get; set; }
+        public int? PostId { get; set; }
         public Post? Post { get; set; }
-        public string? Criado_por { get; set; }
+        public string? UsuarioEmail { get; set; }
         public Usuario? Usuario { get; set; }
     }
 }

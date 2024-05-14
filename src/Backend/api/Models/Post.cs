@@ -13,7 +13,7 @@ namespace api.Models
         public int Curtidas { get; set; }
         public DateTime Criado_em { get; set; } = DateTime.Now;
         public List<Comentario> Comentarios { get; set; } = new List<Comentario>();
-        public string? Criado_por { get; set; }
+        public string? UsuarioEmail { get; set; }
         public Usuario? Usuario { get; set; }
 
     }

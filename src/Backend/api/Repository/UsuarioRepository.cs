@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using api.Data;
 using api.Dtos.Usuario;
+using api.Helpers;
 using api.Interfaces;
 using api.Models;
 using Microsoft.EntityFrameworkCore;
@@ -39,14 +40,39 @@ namespace api.Repository
             return usuarioModel;
         }
 
-        public async Task<List<Usuario>> GetAllAsync()
+        public async Task<List<Usuario>> GetAllAsync(QueryObject query)
         {
-            return await _context.Usuarios.Include(c => c.Comentarios).ToListAsync();
+            var usuarios =  _context.Usuarios
+                .Include(u => u.Comentarios)  // Carrega os comentários associados aos usuários
+                .Include(u => u.Posts)        // Carrega os posts associados aos usuários
+                .ThenInclude(p => p.Comentarios)  // Carrega os comentários associados aos posts dos usuários
+                .AsQueryable();
+            
+            if(!string.IsNullOrWhiteSpace(query.Nome))
+            {
+                usuarios = usuarios.Where(u => u.Nome.Contains(query.Nome));
+            }
+
+            if(!string.IsNullOrWhiteSpace(query.SortBy))
+            {
+                if(query.SortBy.Equals("Criado_em", StringComparison.OrdinalIgnoreCase))
+                {
+                    usuarios = query.IsDescending ? usuarios.OrderByDescending(u => u.Criado_em) : usuarios.OrderBy(u => u.Criado_em);
+                }
+            }
+
+            var skipNumber = (query.PageNumber - 1) * query.PageSize;
+
+
+            return await usuarios.Skip(skipNumber).Take(query.PageSize).ToListAsync();
         }
 
         public async Task<Usuario?> GetByEmailAsync(string email)
         {
-            return await _context.Usuarios.Include(c => c.Comentarios).FirstOrDefaultAsync(e => e.Email == email);
+            return await _context.Usuarios
+                .Include(u => u.Comentarios) // Carrega os comentários associados aos usuários
+                .Include(u => u.Posts)       // Carrega os posts associados aos usuários
+                .FirstOrDefaultAsync(e => e.Email == email);
         }
 
         public async Task<Usuario?> UpdateAsync(string email, UpdateUsuarioRequestDto usuarioDto)
