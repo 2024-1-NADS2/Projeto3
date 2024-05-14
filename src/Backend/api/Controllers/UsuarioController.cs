@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using api.Data;
 using api.Dtos.Usuario;
+using api.Helpers;
 using api.Interfaces;
 using api.Mappers;
 using Microsoft.AspNetCore.Mvc;
@@ -24,9 +25,12 @@ namespace api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> getALL()
+        public async Task<IActionResult> GetALL([FromQuery] QueryObject query)
         {
-            var usuarios = await _usuarioRepo.GetAllAsync();
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+            
+            var usuarios = await _usuarioRepo.GetAllAsync(query);
 
             var usuarioDto = usuarios.Select(s => s.ToUsuarioDto());
 
@@ -36,6 +40,9 @@ namespace api.Controllers
         [HttpGet("{email}")]
         public async Task<IActionResult> GetByEmail([FromRoute] string email)
         {
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+            
             var usuario = await _usuarioRepo.GetByEmailAsync(email);
 
             if(usuario == null)
@@ -48,6 +55,9 @@ namespace api.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateUsuarioRequestDto usuarioDto){
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+            
             var usuarioModel = usuarioDto.ToUsuarioFromCreateDTO();
             await _usuarioRepo.CreateAsync(usuarioModel);
             return CreatedAtAction(nameof(GetByEmail), new { usuarioModel.Email }, usuarioModel.ToUsuarioDto());
@@ -57,6 +67,9 @@ namespace api.Controllers
         [Route("{email}")]
         public async Task<IActionResult> Update([FromRoute] string email, [FromBody] UpdateUsuarioRequestDto updateDto)
         {
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+            
             var usuarioModel = await _usuarioRepo.UpdateAsync(email, updateDto);
 
             if(usuarioModel == null)
@@ -72,6 +85,9 @@ namespace api.Controllers
 
         public async Task<IActionResult> Delete([FromRoute] string email)
         {
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+            
             var usuarioModel = await _usuarioRepo.DeleteAsync(email);
             
             if (usuarioModel == null)

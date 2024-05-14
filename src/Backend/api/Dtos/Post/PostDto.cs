@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using api.Dtos.Comentario;
 
 namespace api.Dtos.Post
 {
@@ -12,6 +13,7 @@ namespace api.Dtos.Post
         public string Imagem { get; set; } = string.Empty;
         public int Curtidas { get; set; }
         public DateTime Criado_em { get; set; } = DateTime.Now;
-        public string? Criado_por { get; set; }
+        public string? UsuarioEmail { get; set; }
+        public List<ComentarioDto>? Comentarios { get; set; } 
     }
 }

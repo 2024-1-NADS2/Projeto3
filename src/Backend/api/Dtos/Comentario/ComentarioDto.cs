@@ -12,7 +12,7 @@ namespace api.Dtos.Comentario
         public string Imagem { get; set; } = string.Empty;
         public int Curtidas { get; set; }
         public DateTime Criado_em { get; set; } = DateTime.Now;
-        public int? Post_id { get; set; }
-        public required string? Criado_por { get; set; }
+        public required int? PostId { get; set; }
+        public required string? UsuarioEmail { get; set; }
     }
 }

@@ -12,7 +12,7 @@ using api.Data;
 namespace api.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20240513031028_init")]
+    [Migration("20240514052306_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -36,9 +36,6 @@ namespace api.Migrations
                     b.Property<DateTime>("Criado_em")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Criado_por")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("Curtidas")
                         .HasColumnType("int");
 
@@ -47,9 +44,6 @@ namespace api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("PostId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Post_id")
                         .HasColumnType("int");
 
                     b.Property<string>("Texto")
@@ -78,9 +72,6 @@ namespace api.Migrations
 
                     b.Property<DateTime>("Criado_em")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Criado_por")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Curtidas")
                         .HasColumnType("int");

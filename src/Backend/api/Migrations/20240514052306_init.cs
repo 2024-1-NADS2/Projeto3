@@ -36,7 +36,6 @@ namespace api.Migrations
                     Imagem = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Curtidas = table.Column<int>(type: "int", nullable: false),
                     Criado_em = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Criado_por = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UsuarioEmail = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
@@ -59,9 +58,7 @@ namespace api.Migrations
                     Imagem = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Curtidas = table.Column<int>(type: "int", nullable: false),
                     Criado_em = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Post_id = table.Column<int>(type: "int", nullable: true),
                     PostId = table.Column<int>(type: "int", nullable: true),
-                    Criado_por = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UsuarioEmail = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
