@@ -97,5 +97,20 @@ namespace api.Repository
         {
             return _context.Usuarios.AnyAsync(s => s.Email == email);
         }
+
+        public async Task<bool> UsuarioHasAccount(string email, string senha)
+        {
+            var usuario = await _context.Usuarios.FirstOrDefaultAsync(e => e.Email == email);
+
+            if (usuario != null)
+            {
+                // Verifica se a senha fornecida corresponde à senha criptografada armazenada no banco de dados
+                return BCrypt.Net.BCrypt.Verify(senha, usuario.Senha);
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

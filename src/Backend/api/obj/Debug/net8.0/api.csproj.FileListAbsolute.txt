@@ -140,3 +140,4 @@ C:\Users\GuicS\Documents\GitHub\Projeto3\src\Backend\api\bin\Debug\net8.0\Micros
 C:\Users\GuicS\Documents\GitHub\Projeto3\src\Backend\api\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\GuicS\Documents\GitHub\Projeto3\src\Backend\api\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\GuicS\Documents\GitHub\Projeto3\src\Backend\api\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\GuicS\Documents\GitHub\Projeto3\src\Backend\api\bin\Debug\net8.0\BCrypt.Net-Next.dll

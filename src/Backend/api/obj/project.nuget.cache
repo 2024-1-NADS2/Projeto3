@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "FSS0z560oE7rb+vD2c5qS4KMVRIJnZF7MJSpLoMgAEVroSP2cfJaIZEbvtPzop78e+Fo1pANuwZtRg26CpAPxA==",
+  "dgSpecHash": "MovjdZCvfL2GNNNoS+FtZvJ4GUOjeYhizqjKTA+BScqIDbHdqjZGDuv3vVAIUrwC5Xz7q/TJJHEo3SR/FWrijw==",
   "success": true,
   "projectFilePath": "C:\\Users\\GuicS\\Documents\\GitHub\\Projeto3\\src\\Backend\\api\\api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\GuicS\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\GuicS\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\GuicS\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\GuicS\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\GuicS\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\8.0.0\\microsoft.aspnetcore.jsonpatch.8.0.0.nupkg.sha512",
     "C:\\Users\\GuicS\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\8.0.0\\microsoft.aspnetcore.mvc.newtonsoftjson.8.0.0.nupkg.sha512",
