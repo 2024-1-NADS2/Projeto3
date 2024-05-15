@@ -1,31 +1,33 @@
 import "./Cadastro.css"
-import BackgroundImage from "../../components/BackgroundImage/BackgroundImage.jsx"
 import FormContainer from "../../components/Form/FormContainer/FormContainer.jsx"
 import Input from "../../components/Form/TextInput/TextInput.jsx"
 import Button from "../../components/Form/Button/Button.jsx"
 import { Link } from "react-router-dom"
+import RootContainer from "../../components/RootContainer/RootContainer.jsx"
 
 const Cadastro = () => {
   return (<div>
-    <BackgroundImage/>
-    <div className="card-login">
-      <FormContainer>
-        <h1 id="title">Cadastro</h1>
-        <div className="fullname">
-          <Input className="texte" type="text" name="nome" placeholder="Nome"/>
-          <Input className="texte" type="text" name="sobrenome" placeholder="Sobrenome"/>
+    <RootContainer>
+      <div>
+        <FormContainer>
+          <h1 id="title">Cadastro</h1>
+          <div className="fullname">
+            <Input className="texte" type="text" name="nome" placeholder="Nome"/>
+            <Input className="texte" type="text" name="sobrenome" placeholder="Sobrenome"/>
+          </div>
+          <Input type="text" name="email" placeholder="Email"/>
+          <Input type="text" name="senha" placeholder="Senha"/>
+          <Input type="text" name="confirmar-senha" placeholder="Confirmar senha"/>
+          <Button><Link to="/">Registrar</Link></Button>
+
+        </FormContainer>
+        <div className="logar">
+          <FormContainer>
+            <h1>Ja tem uma conta? <Link to="/" className="link">Logar!</Link></h1>
+          </FormContainer>
         </div>
-        <Input type="text" name="email" placeholder="Email"/>
-        <Input type="text" name="senha" placeholder="Senha"/>
-        <Input type="text" name="confirmar-senha" placeholder="Confirmar senha"/>
-        <Button to="/feed">Registrar</Button>
-      </FormContainer>
-    </div>
-    <div className="logar">
-      <FormContainer>
-        <h1>Ja tem uma conta? <Link to="/" className="link">Logar!</Link></h1>
-      </FormContainer>
-    </div>
+      </div>
+    </RootContainer>
   </div>
   )
 }
