@@ -59,6 +59,10 @@ namespace api.Controllers
                 return BadRequest(ModelState);
             
             var usuarioModel = usuarioDto.ToUsuarioFromCreateDTO();
+
+            var senhaCriptografada =  BCrypt.Net.BCrypt.HashPassword(usuarioDto.Senha);
+
+            usuarioModel.Senha = senhaCriptografada;
             await _usuarioRepo.CreateAsync(usuarioModel);
             return CreatedAtAction(nameof(GetByEmail), new { usuarioModel.Email }, usuarioModel.ToUsuarioDto());
         }
@@ -69,6 +73,9 @@ namespace api.Controllers
         {
             if(!ModelState.IsValid)
                 return BadRequest(ModelState);
+
+            var senhaCriptografada =  BCrypt.Net.BCrypt.HashPassword(updateDto.Senha);
+            updateDto.Senha = senhaCriptografada;
             
             var usuarioModel = await _usuarioRepo.UpdateAsync(email, updateDto);
 
@@ -97,5 +104,21 @@ namespace api.Controllers
 
             return NoContent();
         }
+
+        [HttpPost("autenticacaoUsuario")]
+        public async Task<IActionResult> AutenticacaoUsuario([FromBody] AuthenticationUsuarioDto authUsuario){
+
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var usuarioVerificado = await _usuarioRepo.UsuarioHasAccount(authUsuario.Email, authUsuario.Senha);
+
+            if(usuarioVerificado == false)
+            {
+                return BadRequest("Usúario ou senha estão incorretos!");
+            }
+
+            return Ok(usuarioVerificado);
+       }
     }
 }

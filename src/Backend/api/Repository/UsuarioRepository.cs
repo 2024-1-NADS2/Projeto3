@@ -75,7 +75,7 @@ namespace api.Repository
                 .FirstOrDefaultAsync(e => e.Email == email);
         }
 
-        public async Task<Usuario?> UpdateAsync(string email, UpdateUsuarioRequestDto usuarioDto)
+        public async Task<Usuario?> UpdateAsync(string email, UpdateUsuarioRequestDto updateRequest)
         {
             var existingUsuario = await _context.Usuarios.FirstOrDefaultAsync(x => x.Email == email);
         
@@ -84,9 +84,9 @@ namespace api.Repository
                 return null;
             }
 
-            existingUsuario.Nome = usuarioDto.Nome;
-            existingUsuario.Sobrenome = usuarioDto.Sobrenome;
-            existingUsuario.Senha = usuarioDto.Senha;
+            existingUsuario.Nome = updateRequest.Nome == "" ? existingUsuario.Nome : updateRequest.Nome;
+            existingUsuario.Sobrenome = updateRequest.Sobrenome == "" ? existingUsuario.Sobrenome : updateRequest.Sobrenome;
+            existingUsuario.Senha = updateRequest.Senha == "" ? existingUsuario.Senha : updateRequest.Senha;
 
             await _context.SaveChangesAsync();
 
@@ -96,6 +96,20 @@ namespace api.Repository
         public Task<bool> UsuarioExists(string email)
         {
             return _context.Usuarios.AnyAsync(s => s.Email == email);
+        }
+
+        public async Task<bool> UsuarioHasAccount(string email, string senha)
+        {
+            var usuario = await _context.Usuarios.FirstOrDefaultAsync(e => e.Email == email);
+
+            if (usuario != null)
+            {
+                return BCrypt.Net.BCrypt.Verify(senha, usuario.Senha);
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

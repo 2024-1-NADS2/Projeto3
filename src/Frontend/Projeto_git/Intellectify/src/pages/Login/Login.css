@@ -2,15 +2,22 @@
   font-size: 30px;
 }
 
+.pageContainer{
+  margin-bottom: 80px;
+}
+
 .cadastre-se{
-  top: 280px;
-  right: 0px;
-  position: absolute;
+  margin-top: 15px;
+}
+
+p{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 14px;
 }
 
 .cadastre-se h1{
   width: max-content;
-  font-size: 20px;
 }
 
 .link{

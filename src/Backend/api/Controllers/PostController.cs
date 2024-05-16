@@ -72,7 +72,7 @@ namespace api.Controllers
             if(!ModelState.IsValid)
                 return BadRequest(ModelState);
             
-            var post = await _postRepo.UpdateAsync(id, updateDto.ToPostFromUpdate());
+            var post = await _postRepo.UpdateAsync(id, updateDto);
         
             if(post == null)
             {

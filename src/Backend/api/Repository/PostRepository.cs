@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using api.Data;
+using api.Dtos.Post;
 using api.Helpers;
 using api.Interfaces;
 using api.Models;
@@ -66,7 +67,7 @@ namespace api.Repository
             return _context.Posts.AnyAsync(s => s.Id == id);
         }
 
-        public async Task<Post?> UpdateAsync(int id, Post postModel)
+        public async Task<Post?> UpdateAsync(int id, UpdatePostRequestDto updateRequest)
         {
             var existingPost = await _context.Posts.FindAsync(id);
 
@@ -75,9 +76,9 @@ namespace api.Repository
                 return null;
             }
 
-            existingPost.Texto = postModel.Texto;
-            existingPost.Imagem = postModel.Imagem;
-            existingPost.Curtidas = postModel.Curtidas;
+            existingPost.Texto = updateRequest.Texto == "" ? existingPost.Texto : updateRequest.Texto;
+            existingPost.Imagem = updateRequest.Imagem == "" ? existingPost.Imagem : updateRequest.Imagem;
+            existingPost.Curtidas = updateRequest.Curtidas == 0 ? existingPost.Curtidas : updateRequest.Curtidas;
 
             await _context.SaveChangesAsync();
 

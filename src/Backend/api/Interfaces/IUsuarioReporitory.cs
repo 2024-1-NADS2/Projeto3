@@ -16,5 +16,6 @@ namespace api.Interfaces
         Task<Usuario?> UpdateAsync(string email, UpdateUsuarioRequestDto usuarioDto); 
         Task<Usuario?> DeleteAsync(string email);
         Task<bool> UsuarioExists(string email);
+        Task<bool> UsuarioHasAccount(string email, string senha);
     }
 }
