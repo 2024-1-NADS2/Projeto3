@@ -1,11 +1,10 @@
 .navbar-container {
-    display: flex;
-    flex-direction: column;
+    justify-content: center; /* Alinha os itens ao centro horizontalmente */
+    align-items: center;
+    text-align: center;
     width: 200px;
     height: 100vh;
     background-color: #fff;
-    justify-content: flex-start;
-    align-items: center;
     color: black;
     box-sizing: border-box;
     border: 1px black;
@@ -18,5 +17,4 @@
     cursor: pointer;
     width: 100%;
     text-align: center;
-    padding: 50px;
-    }
+}

@@ -1,19 +1,20 @@
-.Feed {
-    padding: 20px;
-    background-color: #f0f0f0;
-}
-
 .container {
+    display: flex;
+    width: 100%;
+    max-width: 1280;
+}
+  
+.main-column{
+    flex: 2; 
     padding: 20px;
-    margin-top: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Faz com que o padding não aumente o tamanho total da coluna */
 }
 
-.container p {
-    margin: 0;
-    font-size: 16px;
-    color: #333;
+.column {
+    display: flex;
+    justify-content: center; /* Alinha os itens ao centro horizontalmente */
+    align-items: center;
+    flex: 1; 
+    padding: 20px;
+    box-sizing: border-box; /* Faz com que o padding não aumente o tamanho total da coluna */
 }

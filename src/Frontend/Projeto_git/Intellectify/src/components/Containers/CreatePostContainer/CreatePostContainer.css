@@ -1,7 +1,7 @@
 .CreateContainer {
   margin-right: 125px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin: 0 auto;
   margin-top: 20px;
   height: 100px;
@@ -15,8 +15,8 @@
   padding: 10px;
 }
 
-@media screen and (max-width:768px) {
-  .CreateContainer{
-    margin-right: 0;
+@media screen and (max-width: 768px) {
+  .CreateContainer {
+    margin-right: 0; /* Ajusta apenas a margem direita */
   }
 }

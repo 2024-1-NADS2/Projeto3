@@ -1,9 +1,9 @@
 import React from 'react'
 import "./CreatePostContainer.css"
 
-const CreatePostContainer = ({children}) => {
+const CreatePostContainer = (props) => {
   return (
-    <div className='CreateContainer'>{children}</div>
+    <div className='CreateContainer'>{props.children}</div>
   )
 }
 
