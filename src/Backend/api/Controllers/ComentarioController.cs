@@ -82,7 +82,7 @@ namespace api.Controllers
             if(!ModelState.IsValid)
                 return BadRequest(ModelState);
             
-            var comentario = await _comentarioRepo.UpdateAsync(id, updateDto.ToComentarioFromUpdate());
+            var comentario = await _comentarioRepo.UpdateAsync(id, updateDto);
 
             if(comentario == null)
             {

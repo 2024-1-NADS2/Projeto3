@@ -25,6 +25,15 @@ builder.Services.AddScoped<IUsuarioReporitory, UsuarioRepository>();
 builder.Services.AddScoped<IPostRepository, PostRepository>();
 builder.Services.AddScoped<IComentarioRepository, ComentarioRepository>();
 
+builder.Services.AddCors(op => {
+    //CORS para a aplicação React Local
+    op.AddPolicy("localIntellectify", policyBuilder => {
+        policyBuilder.WithOrigins("http://localhost:5173");
+        policyBuilder.AllowAnyHeader();
+        policyBuilder.AllowCredentials();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -38,4 +47,5 @@ app.UseHttpsRedirection();
 
 app.MapControllers();
 
+app.UseCors("localIntellectify");
 app.Run();

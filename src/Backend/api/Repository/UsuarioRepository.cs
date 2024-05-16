@@ -75,7 +75,7 @@ namespace api.Repository
                 .FirstOrDefaultAsync(e => e.Email == email);
         }
 
-        public async Task<Usuario?> UpdateAsync(string email, UpdateUsuarioRequestDto usuarioDto)
+        public async Task<Usuario?> UpdateAsync(string email, UpdateUsuarioRequestDto updateRequest)
         {
             var existingUsuario = await _context.Usuarios.FirstOrDefaultAsync(x => x.Email == email);
         
@@ -84,9 +84,9 @@ namespace api.Repository
                 return null;
             }
 
-            existingUsuario.Nome = usuarioDto.Nome;
-            existingUsuario.Sobrenome = usuarioDto.Sobrenome;
-            existingUsuario.Senha = usuarioDto.Senha;
+            existingUsuario.Nome = updateRequest.Nome == "" ? existingUsuario.Nome : updateRequest.Nome;
+            existingUsuario.Sobrenome = updateRequest.Sobrenome == "" ? existingUsuario.Sobrenome : updateRequest.Sobrenome;
+            existingUsuario.Senha = updateRequest.Senha == "" ? existingUsuario.Senha : updateRequest.Senha;
 
             await _context.SaveChangesAsync();
 
@@ -104,7 +104,6 @@ namespace api.Repository
 
             if (usuario != null)
             {
-                // Verifica se a senha fornecida corresponde à senha criptografada armazenada no banco de dados
                 return BCrypt.Net.BCrypt.Verify(senha, usuario.Senha);
             }
             else

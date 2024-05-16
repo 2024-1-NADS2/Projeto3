@@ -10,7 +10,7 @@ const Reset = () => {
   return (
     <div>
         <RootContainer>
-            <div>
+            <div className='pageContainer'>
                 <FormContainer>
                     <h1 className="title">Esqueci minha senha</h1>
                     <p>Insira seu e-mail ou telefone ou nome de usuário para enviarmos um código para modificar sua senha</p>

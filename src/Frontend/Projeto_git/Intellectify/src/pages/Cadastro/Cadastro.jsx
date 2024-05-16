@@ -8,7 +8,7 @@ import RootContainer from "../../components/RootContainer/RootContainer.jsx"
 const Cadastro = () => {
   return (<div>
     <RootContainer>
-      <div>
+      <div className="pageContainer">
         <FormContainer>
           <h1 id="title">Cadastro</h1>
           <div className="fullname">

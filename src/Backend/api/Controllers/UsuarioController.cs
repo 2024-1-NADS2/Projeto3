@@ -73,6 +73,9 @@ namespace api.Controllers
         {
             if(!ModelState.IsValid)
                 return BadRequest(ModelState);
+
+            var senhaCriptografada =  BCrypt.Net.BCrypt.HashPassword(updateDto.Senha);
+            updateDto.Senha = senhaCriptografada;
             
             var usuarioModel = await _usuarioRepo.UpdateAsync(email, updateDto);
 

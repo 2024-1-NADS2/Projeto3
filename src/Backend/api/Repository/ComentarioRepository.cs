@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using api.Data;
+using api.Dtos.Comentario;
 using api.Helpers;
 using api.Interfaces;
 using api.Models;
@@ -62,7 +63,7 @@ namespace api.Repository
             return await _context.Comentarios.FindAsync(id);
         }
 
-        public async Task<Comentario?> UpdateAsync(int id, Comentario comentarioModel)
+        public async Task<Comentario?> UpdateAsync(int id, UpdateComentarioRequestDto updateRequest)
         {
             var existingComentario = await _context.Comentarios.FindAsync(id);
 
@@ -71,9 +72,9 @@ namespace api.Repository
                 return null;
             }
 
-            existingComentario.Texto = comentarioModel.Texto;
-            existingComentario.Imagem = comentarioModel.Imagem;
-            existingComentario.Curtidas = comentarioModel.Curtidas;
+            existingComentario.Texto = updateRequest.Texto == "" ? existingComentario.Texto : updateRequest.Texto;
+            existingComentario.Imagem = updateRequest.Imagem == "" ? existingComentario.Imagem : updateRequest.Imagem;
+            existingComentario.Curtidas = updateRequest.Curtidas == 0 ? existingComentario.Curtidas : updateRequest.Curtidas;
 
             await _context.SaveChangesAsync();
 

@@ -5,6 +5,9 @@
   display: flex;
   width: 100%;
 }
+.pageContainer{
+  margin-bottom: 80px;
+}
 
 .fullname .form-control {
   width: 50%;

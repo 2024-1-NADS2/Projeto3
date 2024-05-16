@@ -9,7 +9,7 @@ const Login = () => {
   return (
     <div>
       <RootContainer>
-        <div>
+        <div className="pageContainer">
           <FormContainer>
             <h1 id="title">Login</h1>
             <Input type="text" name="email" placeholder="Email"/>
