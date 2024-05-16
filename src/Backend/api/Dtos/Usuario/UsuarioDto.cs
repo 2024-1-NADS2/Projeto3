@@ -16,6 +16,7 @@ namespace api.Dtos.Usuario
         public string Nome { get; set; } = string.Empty;
         public string Sobrenome { get; set; } = string.Empty;
         public string Senha { get; set; } = string.Empty;
+        public string Imagem { get; set; } = string.Empty;
         public DateTime Criado_em { get; set; } = DateTime.Now;
         public List<PostDto>? Posts { get; set; }
         public List<ComentarioDto>? Comentarios { get; set; }

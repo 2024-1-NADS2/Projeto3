@@ -13,6 +13,7 @@ namespace api.Models
         public string Nome { get; set; } = string.Empty;
         public string Sobrenome { get; set; } = string.Empty;
         public string Senha { get; set; } = string.Empty;
+        public string Imagem { get; set; } = string.Empty;
         public DateTime Criado_em { get; set; } = DateTime.Now;
         public List<Post> Posts { get; set; } = new List<Post>();
         public List<Comentario> Comentarios { get; set; } = new List<Comentario>();

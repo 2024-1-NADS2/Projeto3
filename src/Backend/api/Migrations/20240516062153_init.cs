@@ -19,6 +19,7 @@ namespace api.Migrations
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Sobrenome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Senha = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Imagem = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Criado_em = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>

@@ -16,6 +16,7 @@ namespace api.Mappers
                 Email = usuarioModel.Email,
                 Nome = usuarioModel.Nome,
                 Sobrenome = usuarioModel.Sobrenome,
+                Imagem = usuarioModel.Imagem,
                 Criado_em = usuarioModel.Criado_em,
                 Posts = usuarioModel.Posts.Select(c => c.ToPostDto()).ToList(),
                 Comentarios = usuarioModel.Comentarios.Select(c => c.ToComentarioDto()).ToList()

@@ -87,6 +87,7 @@ namespace api.Repository
             existingUsuario.Nome = updateRequest.Nome == "" ? existingUsuario.Nome : updateRequest.Nome;
             existingUsuario.Sobrenome = updateRequest.Sobrenome == "" ? existingUsuario.Sobrenome : updateRequest.Sobrenome;
             existingUsuario.Senha = updateRequest.Senha == "" ? existingUsuario.Senha : updateRequest.Senha;
+            existingUsuario.Imagem = updateRequest.Imagem == "" ? existingUsuario.Imagem : updateRequest.Imagem;
 
             await _context.SaveChangesAsync();
 
