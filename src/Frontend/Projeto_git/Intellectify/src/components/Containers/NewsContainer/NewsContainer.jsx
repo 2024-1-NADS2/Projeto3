@@ -7,4 +7,5 @@ const NewsContainer = () => {
   )
 }
 
+
 export default NewsContainer

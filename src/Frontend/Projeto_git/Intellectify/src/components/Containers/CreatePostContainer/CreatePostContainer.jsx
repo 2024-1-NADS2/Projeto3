@@ -7,4 +7,5 @@ const CreatePostContainer = (props) => {
   )
 }
 
+
 export default CreatePostContainer
