@@ -1,10 +1,9 @@
 .CreateContainer {
-  margin-right: 125px;
   display: flex;
   flex-direction: row;
   margin: 0 auto;
   margin-top: 20px;
-  height: 100px;
+  height: 70px;
   width: 567px;
   background-color: #ffffff;
   text-align: center;

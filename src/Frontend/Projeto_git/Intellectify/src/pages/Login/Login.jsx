@@ -2,11 +2,13 @@ import "./Login.css"
 import FormContainer from "../../components/Form/FormContainer/FormContainer.jsx"
 import Input from "../../components/Form/TextInput/TextInput.jsx"
 import Button from "../../components/Form/Button/Button.jsx"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import RootContainer from "../../components/RootContainer/RootContainer.jsx"
 
+
 const Login = () => {
-  return (
+  const navigate = useNavigate()
+  return (  
     <div>
       <RootContainer>
         <div className="pageContainer">
@@ -14,7 +16,7 @@ const Login = () => {
             <h1 id="title">Login</h1>
             <Input type="text" name="email" placeholder="Email"/>
             <Input type="text" name="senha" placeholder="Senha"/>
-            <Button><Link to="/feed">Entrar</Link></Button>
+            <Button onClick={() => navigate("/feed")}>Entrar</Button>
             <p><Link to="/reset" className="link">Esqueceu sua senha?</Link></p>
           </FormContainer>
           <div className="cadastre-se">

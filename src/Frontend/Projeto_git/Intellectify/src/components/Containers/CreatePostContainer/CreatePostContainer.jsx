@@ -1,4 +1,3 @@
-import React from 'react'
 import "./CreatePostContainer.css"
 
 const CreatePostContainer = (props) => {

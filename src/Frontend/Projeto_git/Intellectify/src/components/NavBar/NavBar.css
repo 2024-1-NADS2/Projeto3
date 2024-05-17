@@ -2,8 +2,8 @@
   justify-content: center; /* Alinha os itens ao centro horizontalmente */
   align-items: center;
   text-align: center;
-  width: 200px;
-  height: 900px;
+  width: 170px;
+  height: 590px;
   background-color: #fff;
   color: black;
   box-sizing: border-box;
@@ -13,8 +13,8 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4)
 }
 .logo{
-  width: 133px;
-  height: 123px;
+  width: 85px;
+  height: 85px;
   margin: 0 auto;
 }
 
@@ -23,7 +23,7 @@
   cursor: pointer;
   width: 100%;
   text-align: center;
-  padding: 10px;
+  padding: 5px;
   justify-content: center;
   margin: 0 auto;
   align-items: center;
@@ -32,10 +32,10 @@
 } 
 .icones{
   color: #575757;
-  font-size: 50px;
+  font-size: 26px;
   width: 100%;
 }
 
-.button{
+.border-radius{
   border-radius: 24px;
 }

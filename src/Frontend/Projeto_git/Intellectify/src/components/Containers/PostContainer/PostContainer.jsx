@@ -1,4 +1,3 @@
-import React from 'react'
 import "./PostContainer.css"
 import PostMold from '../../ImagemMold/PostMold.jsx'
 import { LuHeart } from "react-icons/lu";
