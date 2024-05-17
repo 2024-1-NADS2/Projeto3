@@ -99,6 +99,10 @@ namespace api.Migrations
                     b.Property<DateTime>("Criado_em")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Imagem")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

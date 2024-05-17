@@ -16,5 +16,6 @@ namespace api.Dtos.Usuario
         [MinLength(8, ErrorMessage = "A senha deve ter no mínimo 8 caracteres")]
         [MaxLength(50, ErrorMessage = "A senha não pode ser maior que 50 caracteres")]
         public string Senha { get; set; } = string.Empty;
+        public string Imagem { get; set; } = string.Empty;
     }
 }

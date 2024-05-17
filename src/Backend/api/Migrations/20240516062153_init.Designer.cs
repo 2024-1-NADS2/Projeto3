@@ -12,7 +12,7 @@ using api.Data;
 namespace api.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20240514052306_init")]
+    [Migration("20240516062153_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -101,6 +101,10 @@ namespace api.Migrations
 
                     b.Property<DateTime>("Criado_em")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Imagem")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
