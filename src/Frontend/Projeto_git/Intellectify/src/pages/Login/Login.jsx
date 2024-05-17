@@ -14,7 +14,7 @@ const Login = () => {
             <h1 id="title">Login</h1>
             <Input type="text" name="email" placeholder="Email"/>
             <Input type="text" name="senha" placeholder="Senha"/>
-            <Button><Link to="/feed">Entrar</Link></Button>
+            <Button to="/feed">Entrar</Button>
             <p><Link to="/reset" className="link">Esqueceu sua senha?</Link></p>
           </FormContainer>
           <div className="cadastre-se">
