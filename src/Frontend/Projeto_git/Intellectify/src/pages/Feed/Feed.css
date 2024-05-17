@@ -13,8 +13,16 @@
 .column {
     display: flex;
     justify-content: center; /* Alinha os itens ao centro horizontalmente */
-    align-items: center;
     flex: 1; 
     padding: 20px;
     box-sizing: border-box; /* Faz com que o padding não aumente o tamanho total da coluna */
 }
+
+/* .form-control{
+    border-radius: 33px;
+    border-bottom: 20px;
+    border: 1px solid #F3F4E6;
+    height: 45px;
+    width: 450px;
+    margin-left: 20px;
+} */

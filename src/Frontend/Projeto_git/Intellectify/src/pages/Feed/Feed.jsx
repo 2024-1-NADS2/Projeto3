@@ -5,23 +5,24 @@ import CreatePostContainer from '../../components/Containers/CreatePostContainer
 import TextInput from '../../components/Form/TextInput/TextInput.jsx'
 import PostContainer from '../../components/Containers/PostContainer/PostContainer.jsx'
 import ImagemMold from '../../components/ImagemMold/ImagemMold.jsx'
+import NewsContainer from '../../components/Containers/NewsContainer/NewsContainer.jsx'
 
 const Feed = () => {
   return (
     <div>
-      <div class="container">
-        <div class="column">
+      <div className="container">
+        <div className="column">
           <NavBar/>
         </div>
-        <div class="main-column">
+        <div className="main-column">
         <CreatePostContainer>
-            {/* <ImagemMold/> */}
-            <TextInput/>
-            <TextInput/>
+          <ImagemMold/>
+          <TextInput/>
         </CreatePostContainer>
         <PostContainer/>
         </div>
-        <div class="column">
+        <div className="column">
+          <NewsContainer/>
         </div>
       </div>
     </div>
