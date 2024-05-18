@@ -25,14 +25,14 @@ builder.Services.AddScoped<IUsuarioReporitory, UsuarioRepository>();
 builder.Services.AddScoped<IPostRepository, PostRepository>();
 builder.Services.AddScoped<IComentarioRepository, ComentarioRepository>();
 
-// builder.Services.AddCors(op => {
-//     //CORS para a aplicação React Local
-//     op.AddPolicy("ApiIntellectify", policyBuilder => {
-//         policyBuilder.WithOrigins("https://intellectifyapi.azurewebsites.net");
-//         policyBuilder.AllowAnyHeader();
-//         policyBuilder.AllowCredentials();
-//     });
-// });
+builder.Services.AddCors(op => {
+    //CORS para a aplicação React Local
+    op.AddPolicy("ApiIntellectify", policyBuilder => {
+        policyBuilder.WithOrigins("http://localhost:5173/");
+        policyBuilder.AllowAnyHeader();
+        policyBuilder.AllowCredentials();
+    });
+});
 
 var app = builder.Build();
 
@@ -53,5 +53,5 @@ app.UseHttpsRedirection();
 
 app.MapControllers();
 
-// app.UseCors("ApiIntellectify");
+app.UseCors("ApiIntellectify");
 app.Run();
