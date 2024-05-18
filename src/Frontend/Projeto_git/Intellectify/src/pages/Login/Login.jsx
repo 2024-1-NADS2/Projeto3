@@ -4,7 +4,7 @@ import Input from "../../components/Form/TextInput/TextInput.jsx"
 import Button from "../../components/Form/Button/Button.jsx"
 import {Link, useNavigate} from "react-router-dom"
 import RootContainer from "../../components/RootContainer/RootContainer.jsx"
-import autenticacaoUsuario from "../../ApiFunctions/UsuarioFunctions.jsx"
+import autenticacaoUsuario from "../../ApiFunctions/UsuarioFunctions"
 
 const Login = () => {
   const navigate = useNavigate();
