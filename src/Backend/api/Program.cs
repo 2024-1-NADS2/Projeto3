@@ -27,8 +27,8 @@ builder.Services.AddScoped<IComentarioRepository, ComentarioRepository>();
 
 builder.Services.AddCors(op => {
     //CORS para a aplicação React Local
-    op.AddPolicy("localIntellectify", policyBuilder => {
-        policyBuilder.WithOrigins("http://localhost:5173");
+    op.AddPolicy("ApiIntellectify", policyBuilder => {
+        policyBuilder.WithOrigins("https://intellectifyapi.azurewebsites.net");
         policyBuilder.AllowAnyHeader();
         policyBuilder.AllowCredentials();
     });
@@ -53,5 +53,5 @@ app.UseHttpsRedirection();
 
 app.MapControllers();
 
-app.UseCors("localIntellectify");
+app.UseCors("ApiIntellectify");
 app.Run();
