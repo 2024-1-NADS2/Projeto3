@@ -5,19 +5,19 @@ import { CiSearch } from "react-icons/ci";
 import { MdOutlineBarChart } from "react-icons/md";
 import { MdOutlineMenuBook } from "react-icons/md";
 import { MdOutlinePerson } from "react-icons/md";
-import Button from "../Form/Button/Button";
 import ProfileMold from "../ImagemMold/ProfileMold";
+import { Link } from "react-router-dom"
 
 const NavBar = () => {
   return (
     <div className="navbar-container">
         <div className="navbar-components"> 
-          <img src={logo} alt="Logo" className="logo"/>
+        <Link to="/feed"><img src={logo} alt="Logo" className="logo"/></Link>
         </div>
 
         <div className="navbar-components"> 
-          <GoHomeFill className="icones"/>
-          <h1>Página Inicial</h1>
+          <Link to="/feed"><GoHomeFill className="icones"/></Link>
+          <Link to="/feed"><h1>Página Inicial</h1></Link>
         </div>
         
         <div className="navbar-components"> 
@@ -36,12 +36,8 @@ const NavBar = () => {
         </div>
 
         <div className="navbar-components"> 
-          <MdOutlinePerson className="icones"/>
-          <h1>Perfil</h1> 
-        </div>
-
-        <div className="navbar-components">
-          <Button borderRadius>Postar</Button>
+          <Link to="/perfil"><MdOutlinePerson className="icones"/></Link>
+          <Link to="/perfil"><h1>Perfil</h1> </Link>
         </div>
 
         <div className="navbar-components">

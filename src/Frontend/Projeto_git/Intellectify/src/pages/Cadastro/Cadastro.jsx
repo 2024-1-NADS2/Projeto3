@@ -12,8 +12,8 @@ const Cadastro = () => {
         <FormContainer>
           <h1 id="title">Cadastro</h1>
           <div className="fullname">
-            <Input className="texte" type="text" name="nome" placeholder="Nome"/>
-            <Input className="texte" type="text" name="sobrenome" placeholder="Sobrenome"/>
+            <Input type="text" name="nome" placeholder="Nome"/>
+            <Input type="text" name="sobrenome" placeholder="Sobrenome"/>
           </div>
           <Input type="text" name="email" placeholder="Email"/>
           <Input type="text" name="senha" placeholder="Senha"/>
