@@ -17,7 +17,8 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 });
 
-builder.Services.AddDbContext<ApplicationDBContext>(options =>{
+builder.Services.AddDbContext<ApplicationDBContext>(options =>
+{
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
@@ -26,24 +27,19 @@ builder.Services.AddScoped<IPostRepository, PostRepository>();
 builder.Services.AddScoped<IComentarioRepository, ComentarioRepository>();
 
 builder.Services.AddCors(op => {
-    //CORS para a aplicação React Local
+    // CORS policy for the React application running locally
     op.AddPolicy("ApiIntellectify", policyBuilder => {
-        policyBuilder.WithOrigins("http://localhost:5173/");
-        policyBuilder.AllowAnyHeader();
-        policyBuilder.AllowCredentials();
+        policyBuilder.WithOrigins("http://localhost:5173")  // Remove trailing slash
+                     .AllowAnyHeader()
+                     .AllowAnyMethod()  // Allow any HTTP method
+                     .AllowCredentials();
     });
 });
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-if (app.Environment.IsProduction())
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
@@ -51,7 +47,8 @@ if (app.Environment.IsProduction())
 
 app.UseHttpsRedirection();
 
+app.UseCors("ApiIntellectify");
+
 app.MapControllers();
 
-app.UseCors("ApiIntellectify");
 app.Run();
