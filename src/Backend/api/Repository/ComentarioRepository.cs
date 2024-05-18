@@ -73,7 +73,6 @@ namespace api.Repository
             }
 
             existingComentario.Texto = updateRequest.Texto == "" ? existingComentario.Texto : updateRequest.Texto;
-            existingComentario.Imagem = updateRequest.Imagem == "" ? existingComentario.Imagem : updateRequest.Imagem;
             existingComentario.Curtidas = updateRequest.Curtidas == 0 ? existingComentario.Curtidas : updateRequest.Curtidas;
 
             await _context.SaveChangesAsync();

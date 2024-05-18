@@ -13,9 +13,10 @@ namespace api.Interfaces
         Task<List<Usuario>> GetAllAsync(QueryObject query);
         Task<Usuario?> GetByEmailAsync(string email);
         Task<Usuario> CreateAsync(Usuario usuarioModel); 
-        Task<Usuario?> UpdateAsync(string email, UpdateUsuarioRequestDto usuarioDto); 
+        Task<Usuario?> UpdateAsync(string email, ImagemUsuarioRequestDto imagemDto); 
         Task<Usuario?> DeleteAsync(string email);
         Task<bool> UsuarioExists(string email);
         Task<bool> UsuarioHasAccount(string email, string senha);
+        Task<bool> ResetSenha(string email, string senha);
     }
 }

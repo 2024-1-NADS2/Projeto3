@@ -69,15 +69,12 @@ namespace api.Controllers
 
         [HttpPut]
         [Route("{email}")]
-        public async Task<IActionResult> Update([FromRoute] string email, [FromBody] UpdateUsuarioRequestDto updateDto)
+        public async Task<IActionResult> AdicionarAlterarImagem([FromRoute] string email, [FromBody] ImagemUsuarioRequestDto imagemDto)
         {
             if(!ModelState.IsValid)
                 return BadRequest(ModelState);
-
-            var senhaCriptografada =  BCrypt.Net.BCrypt.HashPassword(updateDto.Senha);
-            updateDto.Senha = senhaCriptografada;
             
-            var usuarioModel = await _usuarioRepo.UpdateAsync(email, updateDto);
+            var usuarioModel = await _usuarioRepo.UpdateAsync(email, imagemDto);
 
             if(usuarioModel == null)
             {
@@ -116,6 +113,23 @@ namespace api.Controllers
             if(usuarioVerificado == false)
             {
                 return BadRequest("Usúario ou senha estão incorretos!");
+            }
+
+            return Ok(authUsuario.Email);
+       }
+       [HttpPost("resetSenha")]
+        public async Task<IActionResult> ResetSenha([FromBody] AuthenticationUsuarioDto authUsuario){
+
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var senhaCriptografada =  BCrypt.Net.BCrypt.HashPassword(authUsuario.Senha);
+
+            var usuario = await _usuarioRepo.ResetSenha(authUsuario.Email, senhaCriptografada);
+
+            if(usuario == false)
+            {
+                return NotFound();
             }
 
             return Ok(authUsuario.Email);

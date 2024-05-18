@@ -15,7 +15,6 @@ namespace api.Mappers
             {
                 Id = comentarioModel.Id,
                 Texto = comentarioModel.Texto,
-                Imagem = comentarioModel.Imagem,
                 Curtidas = comentarioModel.Curtidas,
                 Criado_em = comentarioModel.Criado_em,
                 PostId = comentarioModel.PostId,
@@ -28,7 +27,6 @@ namespace api.Mappers
             return new Comentario
             {
                 Texto = comentarioDto.Texto,
-                Imagem = comentarioDto.Imagem,
                 PostId = postId,
                 UsuarioEmail = email
             };
@@ -39,7 +37,6 @@ namespace api.Mappers
             return new Comentario
             {
                 Texto = comentarioDto.Texto,
-                Imagem = comentarioDto.Imagem,
                 Curtidas = comentarioDto.Curtidas
 
             };

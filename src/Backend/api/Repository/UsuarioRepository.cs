@@ -75,7 +75,20 @@ namespace api.Repository
                 .FirstOrDefaultAsync(e => e.Email == email);
         }
 
-        public async Task<Usuario?> UpdateAsync(string email, UpdateUsuarioRequestDto updateRequest)
+        public async Task<bool> ResetSenha(string email, string senha)
+        {
+            var usuario = await _context.Usuarios.FirstOrDefaultAsync(u => u.Email == email);
+            
+            if(usuario == null){
+                return false;
+            }
+
+            usuario.Senha = senha == "" ? usuario.Senha : senha;
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<Usuario?> UpdateAsync(string email, ImagemUsuarioRequestDto imagemDto)
         {
             var existingUsuario = await _context.Usuarios.FirstOrDefaultAsync(x => x.Email == email);
         
@@ -83,11 +96,8 @@ namespace api.Repository
             {
                 return null;
             }
-
-            existingUsuario.Nome = updateRequest.Nome == "" ? existingUsuario.Nome : updateRequest.Nome;
-            existingUsuario.Sobrenome = updateRequest.Sobrenome == "" ? existingUsuario.Sobrenome : updateRequest.Sobrenome;
-            existingUsuario.Senha = updateRequest.Senha == "" ? existingUsuario.Senha : updateRequest.Senha;
-            existingUsuario.Imagem = updateRequest.Imagem == "" ? existingUsuario.Imagem : updateRequest.Imagem;
+            
+            existingUsuario.Imagem = imagemDto.Imagem == "" ? existingUsuario.Imagem : imagemDto.Imagem;
 
             await _context.SaveChangesAsync();
 
