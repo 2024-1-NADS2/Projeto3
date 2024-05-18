@@ -10,6 +10,7 @@ namespace api.Dtos.Usuario
     public class CreateUsuarioRequestDto
     {
         [Key]
+        [EmailAddress]
         public required string Email { get; set; }
         [Required]
         [MaxLength(50, ErrorMessage = "Nome não pode ser maior que 50 caracteres")]
