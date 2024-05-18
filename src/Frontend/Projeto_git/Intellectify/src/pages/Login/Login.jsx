@@ -4,10 +4,28 @@ import Input from "../../components/Form/TextInput/TextInput.jsx"
 import Button from "../../components/Form/Button/Button.jsx"
 import {Link, useNavigate} from "react-router-dom"
 import RootContainer from "../../components/RootContainer/RootContainer.jsx"
-
+import cadastroUsuario from "../../ApiFunctions/UsuarioFunctions.jsx"
 
 const Login = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
+  const handleLogin = async () => {
+    const email = document.querySelector('input[name="email"]').value;
+    const senha = document.querySelector('input[name="senha"]').value;
+
+    try {
+      // Chama a função para autenticar o usuário
+      const usuarioEmail = await cadastroUsuario(email, senha);
+
+      // Se autenticação for bem-sucedida, redireciona para a página de feed
+      navigate("/feed");
+    } catch (error) {
+      // Se houver erro na autenticação, trata o erro, como exibir uma mensagem para o usuário
+      console.error("Erro ao autenticar usuário:", error);
+      // Aqui você pode exibir uma mensagem de erro para o usuário informando que as credenciais estão incorretas
+    }
+  };
+  
   return (  
     <div>
       <RootContainer>

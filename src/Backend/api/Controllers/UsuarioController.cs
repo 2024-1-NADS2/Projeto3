@@ -118,7 +118,7 @@ namespace api.Controllers
                 return BadRequest("Usúario ou senha estão incorretos!");
             }
 
-            return Ok(usuarioVerificado);
+            return Ok(authUsuario.Email);
        }
     }
 }
