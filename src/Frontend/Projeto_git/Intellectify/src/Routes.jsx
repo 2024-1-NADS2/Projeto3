@@ -4,15 +4,14 @@ import Cadastro from "./pages/Cadastro/Cadastro"
 import Reset from "./pages/Reset/Reset";
 import Feed from "./pages/Feed/Feed";
 import Perfil from "./pages/Perfil/Perfil";
+import RankFacul from "./pages/RankFacul/RankFacul";
+
 
 const Routes_APP = () => {
   return (
     <Router>
       <Routes>
         <Route exact path="/" element={<Login />} />
-        <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="/reset" element={<Reset />} />
-        <Route path="/feed" element={<Feed />} />
         <Route path="/perfil" element={<Perfil />} />
       </Routes>
     </Router>
