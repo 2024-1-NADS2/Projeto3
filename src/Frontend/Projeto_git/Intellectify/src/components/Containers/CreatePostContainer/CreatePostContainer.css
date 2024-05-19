@@ -3,7 +3,8 @@
   flex-direction: row;
   margin: 0 auto;
   margin-top: 20px;
-  height: 70px;
+  height: auto;
+  max-height: 200px;
   width: 567px;
   background-color: #ffffff;
   text-align: center;

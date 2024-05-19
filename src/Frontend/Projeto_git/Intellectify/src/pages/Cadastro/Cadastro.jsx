@@ -2,10 +2,40 @@ import "./Cadastro.css"
 import FormContainer from "../../components/Form/FormContainer/FormContainer.jsx"
 import Input from "../../components/Form/TextInput/TextInput.jsx"
 import Button from "../../components/Form/Button/Button.jsx"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import RootContainer from "../../components/RootContainer/RootContainer.jsx"
+import { criarUsuario } from "../../ApiFunctions/UsuarioFunctions.jsx"
 
 const Cadastro = () => {
+
+  const navigate = useNavigate();
+
+  const handleCadastro = async () => {
+    const email = document.querySelector('input[name="email"]').value;
+    const nome = document.querySelector('input[name="nome"]').value;
+    const sobrenome = document.querySelector('input[name="sobrenome"]').value;
+    const senha = document.querySelector('input[name="senha"]').value;
+    const confirmarSenha = document.querySelector('input[name="confirmarsenha"]').value;
+
+    if(senha !== confirmarSenha)
+      {
+        window.alert("A senha e sua confirmação devem ser iguais!")
+      }
+    else
+    {
+      try {
+        // Chama a função para autenticar o usuário
+        const usuarioCriado = await criarUsuario(email, nome, sobrenome, senha);
+        // Se autenticação for bem-sucedida, redireciona para a página de feed
+        navigate("/");
+      } catch (error) {
+        // Se houver erro na autenticação, trata o erro, como exibir uma mensagem para o usuário
+        window.alert("Erro ao cadastrar, algum dado deve estar incorreto!");  
+        // Aqui você pode exibir uma mensagem de erro para o usuário informando que as credenciais estão incorretas
+      }
+    }
+  };
+
   return (<div>
     <RootContainer>
       <div className="pageContainer">
@@ -16,9 +46,9 @@ const Cadastro = () => {
             <Input type="text" name="sobrenome" placeholder="Sobrenome"/>
           </div>
           <Input type="text" name="email" placeholder="Email"/>
-          <Input type="text" name="senha" placeholder="Senha"/>
-          <Input type="text" name="confirmar-senha" placeholder="Confirmar senha"/>
-          <Button><Link to="/">Registrar</Link></Button>
+          <Input type="password" name="senha" placeholder="Senha"/>
+          <Input type="password" name="confirmarsenha" placeholder="Confirmar senha"/>
+          <Button onClick={handleCadastro}>Registrar</Button>
 
         </FormContainer>
         <div className="logar">

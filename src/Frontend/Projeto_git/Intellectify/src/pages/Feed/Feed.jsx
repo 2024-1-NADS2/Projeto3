@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import './Feed.css';
 import NavBar from '../../components/NavBar/NavBar.jsx';
 import CreatePostContainer from '../../components/Containers/CreatePostContainer/CreatePostContainer.jsx';
@@ -6,8 +7,37 @@ import PostContainer from '../../components/Containers/PostContainer/PostContain
 import ImagemMold from '../../components/ImagemMold/ProfileMold.jsx';
 import NewsContainer from '../../components/Containers/NewsContainer/NewsContainer.jsx';
 import logobranca from '../../assets/logo-branca.png';
+import { IoMdImage } from "react-icons/io";
+import { HiMiniPlay } from "react-icons/hi2";
+import { pegarUsuario } from '../../ApiFunctions/UsuarioFunctions'; // Ajuste o caminho conforme necessário
+import perfilVazio from '../../assets/perfilVazio.png';
+import { pegarTodosPosts } from '../../ApiFunctions/PostFunctions.jsx';
+
 
 const Feed = () => {
+
+  const [userEmail, setUserEmail] = useState('');
+  const [userData, setUserData] = useState(null);
+  let posts;
+
+  useEffect(() => {
+    // Recupera o email do localStorage quando o componente é montado
+    const savedEmail = localStorage.getItem('userEmail');
+    if (savedEmail) {
+      setUserEmail(savedEmail);
+      // Chama a função pegarUsuario para obter os dados do usuário
+      const fetchUserData = async () => {
+        try {
+          const data = await pegarUsuario(savedEmail);
+          setUserData(data);
+        } catch (error) {
+          console.error('Erro ao obter os dados do usuário:', error);
+        }
+      };
+      fetchUserData();
+      posts = pegarTodosPosts();
+    }
+  }, []);
 
   const comments = [
     { userName: 'João', text: 'Ótima postagem!', userImageSrc: 'https://static.wixstatic.com/media/b822d0_4617102be0c34474a879b32347084969~mv2.jpg/v1/fill/w_318,h_435,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/rb-home-1.jpg' },
@@ -19,12 +49,16 @@ const Feed = () => {
   return (
     <div className="container">
       <div className="column">
-        <NavBar />
+        <NavBar userImage={perfilVazio}/>
       </div>
       <div className="main-column">
-        <CreatePostContainer>
-          <ImagemMold src="https://static.wixstatic.com/media/b822d0_4617102be0c34474a879b32347084969~mv2.jpg/v1/fill/w_318,h_435,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/rb-home-1.jpg" />
-          <TextInput className="width"/>
+        <CreatePostContainer>   
+          <ImagemMold src={perfilVazio}/>
+          <div className="textin"><TextInput className="width"/></div>
+          <div className="image-icone">
+            <IoMdImage color="#575757"/>
+            <HiMiniPlay color="#575757"/>
+          </div>
         </CreatePostContainer>
         <div className="postContainerFeed">
           <PostContainer

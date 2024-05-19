@@ -14,12 +14,21 @@
     margin: 0;
 }
 
+.textin{
+    width: 100%;
+}
+
 .postContainerFeed{
     height: calc(100vh - 90px);
     overflow: auto;
     margin-top: 20px;
 }
 
+.image-icone{
+    cursor: pointer;
+    display: flex;
+    font-size: 25px;
+}
 
 
 .column {

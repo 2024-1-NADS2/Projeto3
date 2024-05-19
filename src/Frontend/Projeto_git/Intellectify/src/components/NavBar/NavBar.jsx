@@ -8,7 +8,7 @@ import { MdOutlinePerson } from "react-icons/md";
 import ProfileMold from "../ImagemMold/ProfileMold";
 import { Link } from "react-router-dom"
 
-const NavBar = () => {
+const NavBar = ({userImage}) => {
   return (
     <div className="navbar-container">
         <div className="navbar-components"> 
@@ -41,7 +41,7 @@ const NavBar = () => {
         </div>
 
         <div className="navbar-components">
-          <ProfileMold src="https://static.wixstatic.com/media/b822d0_4617102be0c34474a879b32347084969~mv2.jpg/v1/fill/w_318,h_435,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/rb-home-1.jpg"/>
+          <ProfileMold src={userImage}/>
         </div>
 
         

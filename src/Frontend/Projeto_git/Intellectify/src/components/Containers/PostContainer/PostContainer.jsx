@@ -51,7 +51,7 @@ const PostContainer = ({ userImageSrc, postImageSrc, userName, likes, comments }
         </div>
         <p className="show-comments" onClick={toggleComments}>
         {showComments ? 'Esconder comentários' : 'Mostrar comentários'}
-      </p>
+        </p>  
       {showComments && <div className="divider"></div>}
       {showComments && (
         <div className="comments-section">
