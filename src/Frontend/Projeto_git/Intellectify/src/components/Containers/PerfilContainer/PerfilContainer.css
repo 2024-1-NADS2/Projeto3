@@ -1,0 +1,63 @@
+.big-box {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    width: 100%;
+    margin-top: 20px; /* Margem superior para ajustar a distância do topo */
+  }
+  
+  .boxi {
+    width: 800px;
+    height: 362px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .boxi img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .ponta{
+    margin-top: 15px;
+    text-align: center;
+    color: #575757;
+  }
+  .meio{
+    margin-right: 70px;
+    margin-top: 85px;
+    text-align: center;
+    color: #575757;
+  }
+  
+  .final{
+margin-right: 10px;
+margin-top: 15px;
+text-align: center;
+color: #575757;
+}
+
+.info-container {
+display: flex;
+justify-content: space-between; /* Distribui os blocos uniformemente */
+margin-top: 20px; /* Espaço entre a imagem e os textos */
+}
+
+.info-block {
+flex: 1;
+margin: 0 10px; /* Margem entre os blocos de texto */
+}
+
+.title {
+font-size: 18px;
+color: #EAB51B;
+}
+
+.subtitle {
+font-size: 16px;
+}
+
+.text {
+font-size: 14px;
+}

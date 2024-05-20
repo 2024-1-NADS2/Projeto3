@@ -11,8 +11,9 @@ const Routes_APP = () => {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<Login />} />
-        <Route path="/perfil" element={<Perfil />} />
+        
+      
+              <Route path="/perfil" element={<Perfil />} />
       </Routes>
     </Router>
   );

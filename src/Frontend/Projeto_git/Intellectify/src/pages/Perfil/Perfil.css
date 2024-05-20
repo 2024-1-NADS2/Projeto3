@@ -1,14 +1,44 @@
-.big-box {
-  margin: 20px auto;
+
+.container {
+  display: flex;
   width: 100%;
+  max-width: 1200px;
+  height: 100vh;
+  justify-content: space-around;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-.boxi {
-  width: 800px; /* Ajustando a largura para 800 pixels */
-  height: 362px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  padding: 20px;
+.main-column{
+  flex: 2; 
+  box-sizing: border-box; 
+  margin: 0;
+}
+
+.postContainerFeed{
+  height: calc(100vh - 90px);
+  overflow: auto;
+  margin-top: 20px;
+}
+
+
+
+.column {
+  display: flex;
+  justify-content: center; /* Alinha os itens ao centro horizontalmente */
+  flex: 1; 
+  box-sizing: border-box; /* Faz com que o padding não aumente o tamanho total da coluna */
+  margin: 0;
+}
+
+.column-dir{
+  margin-top: 140px;
+  display: flex;
+  flex-direction: column;
+}
+
+.column-dir img{
+  margin-top: 70px;
+  width: 187px;
+  height: 226px;
 }
