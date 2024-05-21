@@ -26,13 +26,13 @@ const NavBar = ({userImage}) => {
         </div>
 
         <div className="navbar-components"> 
-          <MdOutlineBarChart className="icones"/>
-          <h1>Rank Universitário</h1> 
+          <Link to="/rankfacul"><MdOutlineBarChart className="icones"/></Link>
+          <Link to="/rankfacul"><h1>Rank Universitário</h1></Link>
         </div>
 
         <div className="navbar-components"> 
-          <MdOutlineMenuBook className="icones"/>
-          <h1>Cursos</h1> 
+          <Link to="/rankcurso"><MdOutlineMenuBook className="icones"/></Link>
+          <Link to="/rankcurso"><h1>Cursos</h1> </Link>
         </div>
 
         <div className="navbar-components"> 

@@ -1,17 +1,13 @@
-.container {
-    display: flex;
-    width: 100%;
-    max-width: 1200px;
-    height: 100vh;
-    justify-content: space-around;
-    margin: 0 auto;
-    overflow: hidden;
+.feedBackgroundColor{
+    background-color: #f0f0f0;
 }
 
-.main-column{
-    flex: 2; 
-    box-sizing: border-box; 
-    margin: 0;
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 50px;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .textin{
@@ -20,7 +16,7 @@
 
 .postContainerFeed{
     height: calc(100vh - 90px);
-    overflow: auto;
+    overflow:auto;
     margin-top: 20px;
 }
 
@@ -28,21 +24,6 @@
     cursor: pointer;
     display: flex;
     font-size: 25px;
-}
-
-
-.column {
-    display: flex;
-    justify-content: center; /* Alinha os itens ao centro horizontalmente */
-    flex: 1; 
-    box-sizing: border-box; /* Faz com que o padding não aumente o tamanho total da coluna */
-    margin: 0;
-}
-
-.column-dir{
-    margin-top: 140px;
-    display: flex;
-    flex-direction: column;
 }
 
 .column-dir img{

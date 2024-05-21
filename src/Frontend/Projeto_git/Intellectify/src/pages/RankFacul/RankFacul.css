@@ -1,0 +1,23 @@
+.background{
+    background-color: #f0f0f0;
+    
+}
+
+.rankContainer{
+    display: flex;
+    font-family: Arial, sans-serif;
+    padding-top: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container-facul {
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+}

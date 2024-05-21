@@ -1,0 +1,45 @@
+ /* .container-facul {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding-top: 50px;
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+  
+.caixa {
+    height: 125px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 850px;
+}
+  
+.caixa img {
+    border-radius: 5px;
+}
+  
+.texto {
+    font-size: 18px;
+    color: #97D781;
+    font-weight: bold;
+    white-space: nowrap; 
+    text-align: center;
+
+}
+  
+.titulo {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+  
+.quantidade {
+    color: #333333;
+} */
