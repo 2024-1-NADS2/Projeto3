@@ -14,7 +14,7 @@
 
 ## Descrição
 
-<p align="center">
+<p>
 Intellectify é uma rede social voltada exclusivamente para estudantes, proporcionando um ambiente colaborativo e enriquecedor onde conhecimentos são compartilhados e novas conexões acadêmicas são estabelecidas. Esta plataforma foi desenvolvida com o intuito de facilitar a troca de informações, a criação de grupos de estudo e o apoio mútuo entre estudantes de diversas áreas do conhecimento.
 </p>
 
