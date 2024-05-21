@@ -1,5 +1,6 @@
 .background{
     background-color: #f0f0f0;
+    height: 100vh;
 }
 
 .rankContainer{
@@ -9,7 +10,7 @@
     margin-right: 50px;
     margin-left: 50px;
     margin: 0 auto;
-    height: fit-content;
+    height: 100vh;
     display: flex;
     justify-content: space-around;
     overflow: hidden;

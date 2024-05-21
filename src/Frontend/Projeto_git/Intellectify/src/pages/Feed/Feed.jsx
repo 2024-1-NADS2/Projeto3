@@ -37,8 +37,16 @@ const Feed = () => {
       };
       fetchUserData();
       
-      const posts = pegarTodosPosts();
-      setPostsData(posts)
+      const fetchPostsData = async () => {
+        try {
+          const posts = await pegarTodosPosts();
+          console.log(postsData)
+          setPostsData(posts);
+        } catch (error) {
+          console.error('Erro ao obter os posts:', error);
+        }
+      };
+      fetchPostsData();
     }
   }, []);
 
@@ -68,13 +76,16 @@ const Feed = () => {
             </div>
           </CreatePostContainer>
           <div className="postContainerFeed">
-            <PostContainer
-              userImageSrc="https://static.wixstatic.com/media/b822d0_4617102be0c34474a879b32347084969~mv2.jpg/v1/fill/w_318,h_435,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/rb-home-1.jpg"
-              userName="Guilherme"
-              postImageSrc="https://static.wixstatic.com/media/b822d0_8e8436d144ff4c3abb6bed1db62ea354~mv2.png/v1/fill/w_1854,h_446,al_t,q_90,enc_auto/b822d0_8e8436d144ff4c3abb6bed1db62ea354~mv2.png"
-              likes="10"
-              comments={""}
-            />
+          {postsData.map((post, index) => (
+              <PostContainer
+                key={index}
+                userImageSrc={post.userImageSrc}
+                userName={post.userName}
+                postImageSrc={post.postImageSrc}
+                likes={post.likes}
+                comments={post.comments}
+              />
+            ))}
           </div>
         </div>
         <div className="column">

@@ -16,7 +16,7 @@ const RankFacul = () => {
             <div className="rankContainer">
                 <div className="navcolumn"><NavBar/></div>
                 <div class="container-facul">
-                    <div className="main-column">
+                    <div className="main-column22">
                         <RankContainer
                         imagem={Usp}
                         titulo={"USP - Universidade de São Paulo"}
