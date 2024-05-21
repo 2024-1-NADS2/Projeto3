@@ -1,5 +1,7 @@
 .navbar-container {
-  justify-content: center; /* Alinha os itens ao centro horizontalmente */
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;/* Alinha os itens ao centro horizontalmente */
   align-items: center;
   text-align: center;
   width: 170px;
@@ -18,16 +20,16 @@
 }
 
 .navbar-components {
+  display: flex;
+  flex-direction: column;
   color: #575757;
   cursor: pointer;
   width: 100%;
   text-align: center;
-  padding: 10px;
-  justify-content: center;
+  display: flex;
   margin: 0 auto;
   align-items: center;
-  display: flex;
-  flex-direction: column;
+  
   font-size: 18px;
 } 
 .icones{

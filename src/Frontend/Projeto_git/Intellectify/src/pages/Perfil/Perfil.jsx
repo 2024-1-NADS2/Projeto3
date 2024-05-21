@@ -1,7 +1,7 @@
 import NavBar from '../../components/NavBar/NavBar'
 import PostContainer from '../../components/Containers/PostContainer/PostContainer'
 import NewsContainer from '../../components/Containers/NewsContainer/NewsContainer.jsx';
-import logobranca from '../../assets/logo-branca.png';
+import logobranca from '../../assets/logo-intellectify-sem-fundo.png';
 import PerfilContainer from '../../components/Containers/PerfilContainer/PerfilContainer.jsx';
 import './Perfil.css'
 

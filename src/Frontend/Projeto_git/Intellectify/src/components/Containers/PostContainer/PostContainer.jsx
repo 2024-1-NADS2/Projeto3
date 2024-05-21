@@ -67,19 +67,19 @@ const PostContainer = ({ userImageSrc, postImageSrc, userName, likes, comments }
           </p>  
         </div>
       {showComments && <div className="divider"></div>}
-      {showComments && (
-        <div className="comments-section">
-          {comments.map((comment, index) => (
-            <div key={index} className="comment">
-              <ProfileMold src={comment.userImageSrc} />
-              <div className="comment-content">
-                <h2>{comment.userName}</h2>
-                <p>{comment.text}</p>
-              </div>
+      {showComments && comments && comments.length > 0 && (
+      <div className="comments-section">
+        {comments.map((comment, index) => (
+          <div key={index} className="comment">
+            <ProfileMold src={comment.userImageSrc} />
+            <div className="comment-content">
+              <h2>{comment.userName}</h2>
+              <p>{comment.text}</p>
             </div>
-          ))}
-        </div>
-      )}
+          </div>
+        ))}
+      </div>
+    )}
     </div>
   )
 }
