@@ -12,6 +12,7 @@ import { HiMiniPlay } from "react-icons/hi2";
 import { pegarUsuario } from '../../ApiFunctions/UsuarioFunctions'; // Ajuste o caminho conforme necessário
 import perfilVazio from '../../assets/perfilVazio.png';
 import { pegarTodosPosts } from '../../ApiFunctions/PostFunctions.jsx';
+import MenuHamburger from '../../components/MenuHamburguer/Menuburger.jsx';
 
 
 const Feed = () => {
@@ -48,16 +49,17 @@ const Feed = () => {
 
   return (
     <div className="feedBackgroundColor">
-      <div className="container">
+      <div className="feedContainer">
         <div className="column">
           <NavBar userImage={perfilVazio}/>
+          <div className="burgermenufeed"><MenuHamburger/></div>
         </div>
         <div className="main-column">
           <CreatePostContainer>   
             <ImagemMold src={perfilVazio}/>
-            <div className="textin"><TextInput className="width"/></div>
+            <div className="textin"><TextInput type="textarea"/></div>
             <div className="image-icone">
-              <IoMdImage color="#575757"/>
+              <IoMdImage color="#575757"><TextInput type="file"/></IoMdImage>
               <HiMiniPlay color="#575757"/>
             </div>
           </CreatePostContainer>

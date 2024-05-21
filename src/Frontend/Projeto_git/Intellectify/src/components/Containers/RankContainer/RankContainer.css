@@ -32,3 +32,14 @@
 .qntCursos{
     color: #333333;
 }
+
+@media screen and (max-width: 1050px) {
+    .caixa{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 915px) {
+    .navcolumn{
+        display: none;
+    }
+}     

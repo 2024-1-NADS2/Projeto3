@@ -19,6 +19,10 @@ const PostContainer = ({ userImageSrc, postImageSrc, userName, likes, comments }
     setLiked(!liked);
   }
 
+  const createComment = () =>{
+    let newcomment = window.prompt("Digite seu Comentário:")
+  }
+
   return (
     <div className='PostContainer'>
       <div className="PostHeader">
@@ -26,32 +30,39 @@ const PostContainer = ({ userImageSrc, postImageSrc, userName, likes, comments }
         <h1>{userName}</h1>
       </div>
         <PostMold src={postImageSrc}/>
-        <div className="post-icones">
-          {liked ? (
-          <PiHeartFill
-            color="red"
-            onClick={LikeButton}
-            style={{ cursor: 'pointer' }}
-          />
-        ) : (
-          <PiHeartBold
-            color="#575757"
-            onClick={LikeButton}
-            style={{ cursor: 'pointer' }}
-          />
-        )}
-          <BiComment className='comment' onClick={toggleComments} />
-        </div>
-        <div className="likes-text">
-          <p>{likes} pessoas curtiram seu post</p>
+        <div className="icons-text">
+          <div className="post-icones">
+            {liked ? (
+            <PiHeartFill
+              color="red"
+              onClick={LikeButton}
+              style={{ cursor: 'pointer' }}
+            />
+          ) : (
+            <PiHeartBold
+              color="#575757"
+              onClick={LikeButton}
+              style={{ cursor: 'pointer' }}
+            />
+          )}
+            <BiComment className='comment' onClick={createComment} />
+          </div>
+            <div className="likes-text">
+              <p>{likes} pessoas curtiram seu post</p>
+            </div>
         </div>
         <div className="post-text"> 
-          <h1>Pedro Carvalho</h1>
-          <p>A “sorte” só encontra quem está preparado...</p>
+          <h1 className="post-title">{userName}:</h1>
+          <h1 className="post-description">A “sorte” só encontra quem está preparado...</h1>
         </div>
-        <p className="show-comments" onClick={toggleComments}>
-        {showComments ? 'Esconder comentários' : 'Mostrar comentários'}
-        </p>  
+        <div className="createSeeComment">
+          <p className="create-comment" onClick={createComment}>
+            Adicionar um comentário...
+          </p>
+          <p className="show-comments" onClick={toggleComments}>
+          {showComments ? 'Esconder comentários' : 'Mostrar comentários'}
+          </p>  
+        </div>
       {showComments && <div className="divider"></div>}
       {showComments && (
         <div className="comments-section">

@@ -1,45 +1,59 @@
-.container {
+.perfilBackgroundColor{
+  background-color: #f0f0f0;
+}
+
+.perfilcont {
   display: flex;
-  width: 100%;
-  max-width: 1200px;
-  height: 100vh;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin: 0 auto;
+  padding-top: 50px;
+  height: 100vh;
   overflow: hidden;
+  max-width: 1280px;
 }
 
-.main-column{
-  flex: 2; 
-  box-sizing: border-box; 
-  margin: 0;
-}
-
-.postContainerFeed{
+.perfilpostContainerFeed{
   height: calc(100vh - 90px);
-  overflow: auto;
+  overflow:auto;
   margin-top: 20px;
-}
-
-
-
-.column {
-  display: flex;
-  justify-content: center; /* Alinha os itens ao centro horizontalmente */
-  flex: 1; 
-  box-sizing: border-box; /* Faz com que o padding não aumente o tamanho total da coluna */
-  margin: 0;
-}
-
-.column-dir{
-  margin-top: 140px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.column-dir img{
+.perfilcolumn-dir img{
   margin-top: 70px;
   width: 187px;
   height: 226px;
 }
 
+@media screen and (max-width: 950px) {
+  .perfilcolumn-dir {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .perfilcolumn{
+    display: none;
+  }
+  .perfilcont{
+      margin: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column{
+    display: none;
+  }
+  .perfilcont{
+      margin: 0;
+  }
+}  
+
+@media screen and (max-width: 300px) {
+  .textin{
+        width: 80%;
+  }
+}  
 

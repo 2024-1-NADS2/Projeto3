@@ -1,7 +1,6 @@
 import "./NavBar.css"
 import logo from '../../assets/logo.png';
 import { GoHomeFill } from "react-icons/go";
-import { CiSearch } from "react-icons/ci";
 import { MdOutlineBarChart } from "react-icons/md";
 import { MdOutlineMenuBook } from "react-icons/md";
 import { MdOutlinePerson } from "react-icons/md";
@@ -18,11 +17,6 @@ const NavBar = ({userImage}) => {
         <div className="navbar-components"> 
           <Link to="/feed"><GoHomeFill className="icones"/></Link>
           <Link to="/feed"><h1>Página Inicial</h1></Link>
-        </div>
-        
-        <div className="navbar-components"> 
-          <CiSearch className="icones"/>
-          <h1>Explorar </h1>
         </div>
 
         <div className="navbar-components"> 
@@ -41,7 +35,7 @@ const NavBar = ({userImage}) => {
         </div>
 
         <div className="navbar-components">
-          <ProfileMold src={userImage}/>
+          <div className="ImagePerfil"><ProfileMold src={userImage}/></div>
         </div>
 
         

@@ -1,6 +1,6 @@
 /* styles.css */
 .post-mold {
-  width: 569px;
+  width: fit-content; 
   height: auto;
   max-height: 524px;
   border-radius: 26px;

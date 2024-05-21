@@ -14,7 +14,7 @@ const RankFacul = () => {
     return (
         <div className="background">
             <div className="rankContainer">
-                <div className="column"><NavBar/></div>
+                <div className="navcolumn"><NavBar/></div>
                 <div class="container-facul">
                     <div className="main-column">
                         <RankContainer

@@ -2,12 +2,18 @@
     background-color: #f0f0f0;
 }
 
-.container {
+.burgermenufeed{
+    display: none;
+}
+
+.feedContainer {
     display: flex;
     justify-content: space-evenly;
+    margin: 0 auto;
     padding-top: 50px;
     height: 100vh;
     overflow: hidden;
+    max-width: 1280px;
 }
 
 .textin{
@@ -15,7 +21,7 @@
 }
 
 .postContainerFeed{
-    height: calc(100vh - 90px);
+    height: calc(100vh - 170px);
     overflow:auto;
     margin-top: 20px;
 }
@@ -30,4 +36,28 @@
     margin-top: 70px;
     width: 187px;
     height: 226px;
+}
+
+@media screen and (max-width: 950px) {
+    .column-dir {
+      display: none;
+    }
+  }
+
+@media screen and (max-width: 775px) {
+    .column{
+      display: none;
+    }
+    .feedContainer{
+        margin: 0;
+    }
+    .burgermenufeed{
+        display: flex;
+    }
+  }
+
+@media screen and (max-width: 775px) {
+    .image-icone{
+        font-size: 18px;
+    }
 }
