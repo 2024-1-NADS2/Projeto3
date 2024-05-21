@@ -39,7 +39,8 @@ Intellectify é uma rede social voltada exclusivamente para estudantes, proporci
 
 Para criarmos nossa rede social pegamos algumas inspirações em outras redes já existentes como Instagram, Facebook, linkedIn, X(Twitter).
 Aqui segue alguns links das redes citadas acima:
-https://www.instagram.com/
-https://www.facebook.com/?locale=pt_BR
+<a href="https://www.instagram.com/">Instagram</a>
+<a href="https://www.facebook.com/?locale=pt_BR">Facebook</a>
+
 https://br.linkedin.com/?src=go-pa&trk=sem-ga_campid.12619604099_asid.149519181115_crid.657343811716_kw.linkedin_d.c_tid.kwd-148086543_n.g_mt.e_geo.1001773&mcid=6821526239111716925&cid=&gad_source=1&gclid=Cj0KCQjwjLGyBhCYARIsAPqTz1-D-T-zXvcPpCcwRG3OZJyPRevF0l_rv7yfY7ygodvFygDRlB4T3mIaAirdEALw_wcB&gclsrc=aw.ds
 https://x.com/?lang=pt-br
