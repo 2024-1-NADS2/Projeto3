@@ -3,12 +3,6 @@ import { Link, useActionData } from "react-router-dom"
 import perfilVazio from '../../assets/perfilVazio.png';
 
 const ImagemMold = ({ userImage }) => {
-
-  if(userImage === null || userImage === "")
-    {
-      userImage = perfilVazio
-    }
-
   return (
     <div className="round-image-container"> {/* Usa a classe do container */}
       <div className="round-image">

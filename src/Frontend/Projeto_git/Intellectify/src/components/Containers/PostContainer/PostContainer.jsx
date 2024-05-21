@@ -10,6 +10,7 @@ const PostContainer = ({ userImageSrc, postImageSrc, userName, likes, comments }
   
   const [showComments, setShowComments] = useState(false);
   const [liked, setLiked] = useState(false);
+  const [inputComment, setInputComment] = useState(false);
 
   const toggleComments = () => {
     setShowComments(!showComments);
@@ -20,7 +21,7 @@ const PostContainer = ({ userImageSrc, postImageSrc, userName, likes, comments }
   }
 
   const createComment = () =>{
-    let newcomment = window.prompt("Digite seu Comentário:")
+    setInputComment(true)
   }
 
   return (
@@ -56,9 +57,11 @@ const PostContainer = ({ userImageSrc, postImageSrc, userName, likes, comments }
           <h1 className="post-description">A “sorte” só encontra quem está preparado...</h1>
         </div>
         <div className="createSeeComment">
-          <p className="create-comment" onClick={createComment}>
+          {inputComment ? "qq coisa" : (
+            <p className="create-comment" onClick={createComment}>
             Adicionar um comentário...
-          </p>
+            </p>
+          )}
           <p className="show-comments" onClick={toggleComments}>
           {showComments ? 'Esconder comentários' : 'Mostrar comentários'}
           </p>  

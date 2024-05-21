@@ -1,4 +1,3 @@
-import React from 'react'
 import NavBar from '../../components/NavBar/NavBar'
 import PostContainer from '../../components/Containers/PostContainer/PostContainer'
 import NewsContainer from '../../components/Containers/NewsContainer/NewsContainer.jsx';

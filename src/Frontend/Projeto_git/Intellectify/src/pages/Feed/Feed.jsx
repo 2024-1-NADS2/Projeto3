@@ -36,6 +36,7 @@ const Feed = () => {
         }
       };
       fetchUserData();
+      
       posts = pegarTodosPosts();
     }
   }, []);
@@ -47,11 +48,13 @@ const Feed = () => {
     { userName: 'Carlos', text: 'Muito inspirador.', userImageSrc: 'https://static.wixstatic.com/media/b822d0_4617102be0c34474a879b32347084969~mv2.jpg/v1/fill/w_318,h_435,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/rb-home-1.jpg' }
   ];
 
+  console.log("userdata", userData)
+
   return (
     <div className="feedBackgroundColor">
       <div className="feedContainer">
         <div className="column">
-          <NavBar userImage={perfilVazio}/>
+          <NavBar userImage={userData && userData.imagem || perfilVazio}/>
           <div className="burgermenufeed"><MenuHamburger/></div>
         </div>
         <div className="main-column">
@@ -59,7 +62,7 @@ const Feed = () => {
             <ImagemMold src={perfilVazio}/>
             <div className="textin"><TextInput type="textarea"/></div>
             <div className="image-icone">
-              <IoMdImage color="#575757"><TextInput type="file"/></IoMdImage>
+              <IoMdImage color="#575757"></IoMdImage>
               <HiMiniPlay color="#575757"/>
             </div>
           </CreatePostContainer>

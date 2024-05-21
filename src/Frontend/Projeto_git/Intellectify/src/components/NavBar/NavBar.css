@@ -3,7 +3,7 @@
   align-items: center;
   text-align: center;
   width: 170px;
-  height: 705px;
+  height: 90%;
   background-color: #fff;
   color: black;
   box-sizing: border-box;
@@ -22,7 +22,7 @@
   cursor: pointer;
   width: 100%;
   text-align: center;
-  padding: 15px;
+  padding: 10px;
   justify-content: center;
   margin: 0 auto;
   align-items: center;

@@ -35,7 +35,7 @@ const NavBar = ({userImage}) => {
         </div>
 
         <div className="navbar-components">
-          <div className="ImagePerfil"><ProfileMold src={userImage}/></div>
+          <div className="ImagePerfil"><ProfileMold userImage={userImage}/></div>
         </div>
 
         
