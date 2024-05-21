@@ -1,7 +1,7 @@
 # FECAP - Fundação de Comércio Álvares Penteado
 
 <p align="center">
-<a href= "https://www.fecap.br/"><img src="https://trello.com/1/cards/65c7b312c945554345446a90/attachments/65e64eb639f3c931a422a2a4/previews/65e64eb739f3c931a422a7d6/download/intellectify.png" alt="Itellectify a rede social para os estudantes" border="0"></a>
+<a href= "https://www.fecap.br/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhZPrRa89Kma0ZZogxm0pi-tCn_TLKeHGVxywp-LXAFGR3B1DPouAJYHgKZGV0XTEf4AE&usqp=CAU" border="0"></a>
 </p>
 
 # Rede Social para Estudantes - Intellectify
