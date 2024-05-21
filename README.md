@@ -1,7 +1,7 @@
 # FECAP - Fundação de Comércio Álvares Penteado
 
 <p align="center">
-<a href= "https://www.fecap.br/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhZPrRa89Kma0ZZogxm0pi-tCn_TLKeHGVxywp-LXAFGR3B1DPouAJYHgKZGV0XTEf4AE&usqp=CAU" alt="FECAP - Fundação de Comércio Álvares Penteado" border="0"></a>
+<a href= "https://www.fecap.br/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhZPrRa89Kma0ZZogxm0pi-tCn_TLKeHGVxywp-LXAFGR3B1DPouAJYHgKZGV0XTEf4AE&usqp=CAU" alt="Itellectify a rede social para os estudantes" border="0"></a>
 </p>
 
 # Rede Social para Estudantes - Intellectify
@@ -15,7 +15,7 @@
 ## Descrição
 
 <p align="center">
-Imagem
+Intellectify é uma rede social voltada exclusivamente para estudantes, proporcionando um ambiente colaborativo e enriquecedor onde conhecimentos são compartilhados e novas conexões acadêmicas são estabelecidas. Esta plataforma foi desenvolvida com o intuito de facilitar a troca de informações, a criação de grupos de estudo e o apoio mútuo entre estudantes de diversas áreas do conhecimento.
 </p>
 
 <br><br>
@@ -37,4 +37,9 @@ Imagem
 
 ## 🎓 Referências
 
-Aqui estão as referências usadas no projeto.
+Para criarmos nossa rede social pegamos algumas inspirações em outras redes já existentes como Instagram, Facebook, linkedIn, X(Twitter).
+Aqui segue alguns links das redes citadas acima:
+https://www.instagram.com/
+https://www.facebook.com/?locale=pt_BR
+https://br.linkedin.com/?src=go-pa&trk=sem-ga_campid.12619604099_asid.149519181115_crid.657343811716_kw.linkedin_d.c_tid.kwd-148086543_n.g_mt.e_geo.1001773&mcid=6821526239111716925&cid=&gad_source=1&gclid=Cj0KCQjwjLGyBhCYARIsAPqTz1-D-T-zXvcPpCcwRG3OZJyPRevF0l_rv7yfY7ygodvFygDRlB4T3mIaAirdEALw_wcB&gclsrc=aw.ds
+https://x.com/?lang=pt-br
