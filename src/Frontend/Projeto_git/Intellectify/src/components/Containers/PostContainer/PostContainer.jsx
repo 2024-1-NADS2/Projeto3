@@ -4,7 +4,7 @@ import { PiHeartBold } from "react-icons/pi";
 import { PiHeartFill } from "react-icons/pi";
 import ProfileMold from '../../ImagemMold/ProfileMold.jsx'
 import { BiComment } from "react-icons/bi";
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { curtirPost } from "../../../ApiFunctions/PostFunctions.jsx";
 
 const PostContainer = ({ userImageSrc, postImageSrc, postID, userName, postDescription, likes, comments }) => {

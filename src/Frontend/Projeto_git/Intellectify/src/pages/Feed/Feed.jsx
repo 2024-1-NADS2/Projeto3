@@ -57,6 +57,22 @@ const Feed = () => {
       fetchPostsData();
     }
   }, []);
+  const handlePost = async () => {
+    const textoPost = document.querySelector('input[name="textoPost"]').value;
+    const imagemPost = document.querySelector('input[name="imagemPost"]').value;
+
+    
+    try {
+
+      const novoPost = await autenticacaoUsuario(email, senha);
+
+
+    } catch (error) {
+
+      window.alert("Erro ao autenticar, usuário ou senha devem estar incorretos!");
+
+    }
+  };
 
   return (
     <div className="feedBackgroundColor">
@@ -73,8 +89,8 @@ const Feed = () => {
             <ImagemMold userImage={userData && userData.imagem || perfilVazio}/>
             <div className="textin"><TextInput type="textarea" name="textoPost"/></div>
             <div className="image-icone">
-              <ImageIcon onImageChange={handleImageChange}/>
-              <CreateIcon onClick={handleImageChange}/>
+              <ImageIcon onImageChange={handleImageChange} name="imagemPost"/>
+              <CreateIcon onClick={handlePost}/>
             </div>
           </CreatePostContainer>
           <div className="postContainerFeed">
@@ -87,6 +103,7 @@ const Feed = () => {
                 postDescription={post.texto}
                 likes={post.curtidas}
                 comments={post.comentarios}
+                postID={post.id}
               />
             ))}
           </div>

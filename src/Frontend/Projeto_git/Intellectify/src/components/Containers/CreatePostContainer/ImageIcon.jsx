@@ -2,22 +2,8 @@ import React, { useState } from 'react';
 import './ImageIcon.css'
 import { IoMdImage } from "react-icons/io";
 
-const ImageIcon = ({onImageChange}) => {
+const ImageIcon = ({name}) => {
 
-  const handleImageChange = (event) => {
-    const selectedImage = event.target.files[0];
-    const reader = new FileReader();
-
-    reader.onloadend = () => {
-      // A função onloadend é chamada quando a operação de leitura é concluída
-      // reader.result contém a imagem codificada em base64
-      const base64Image = reader.result;
-      onImageChange(base64Image); // Chama a função onImageChange com a imagem em base64 como argumento
-    };
-
-    // Leitura do arquivo como URL de dados base64
-    reader.readAsDataURL(selectedImage);
-  };
 
   return (
       <div className="image-upload">
@@ -28,8 +14,8 @@ const ImageIcon = ({onImageChange}) => {
           id="image-upload"
           type="file"
           accept="image/*"
-          onChange={handleImageChange}
           style={{ display: 'none' }}
+          name = {name}
         />
       </div>
   );

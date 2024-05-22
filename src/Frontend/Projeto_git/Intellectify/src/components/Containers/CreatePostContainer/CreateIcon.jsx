@@ -4,7 +4,7 @@ const CreateIcon = (onClick) => {
 
   return (
     <div>
-      <HiMiniPlay color="#575757" onClick={onClick} />
+      <HiMiniPlay color="#575757" onClick={onClick} name />
     </div>
   );
 };
