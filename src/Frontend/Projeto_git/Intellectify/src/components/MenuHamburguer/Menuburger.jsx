@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Menuburger.css'; // Certifique-se de criar e importar o arquivo CSS
+import { Link } from "react-router-dom"
 
 const MenuHamburger = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,10 +18,10 @@ const MenuHamburger = () => {
       </div>
       {isOpen && (
         <div className="menu-links">
-          <a href="#pagina-inicial">Página Inicial</a>
-          <a href="#ranking-universitario">Ranking Universitário</a>
-          <a href="#cursos">Cursos</a>
-          <a href="#foto-de-perfil">Foto de Perfil</a>
+          <Link to="/feed"></Link><p>Página Inicial</p>
+          <Link to="/rankfacul"></Link><p>Ranking Universitário</p>
+          <Link to="/rankcurso"></Link><p>Cursos</p>
+          <Link to="/perfil"></Link><p>Perfil</p>
         </div>
       )}
     </div>

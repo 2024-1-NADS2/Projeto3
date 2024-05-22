@@ -83,7 +83,7 @@ namespace api.Repository
 
             existingPost.Texto = updateRequest.Texto == "" ? existingPost.Texto : updateRequest.Texto;
             existingPost.Imagem = updateRequest.Imagem == "" ? existingPost.Imagem : updateRequest.Imagem;
-            existingPost.Curtidas = updateRequest.Curtidas == 0 ? existingPost.Curtidas : updateRequest.Curtidas;
+            existingPost.Curtidas = updateRequest.Curtidas == 0 ? existingPost.Curtidas : existingPost.Curtidas + updateRequest.Curtidas;
 
             await _context.SaveChangesAsync();
 

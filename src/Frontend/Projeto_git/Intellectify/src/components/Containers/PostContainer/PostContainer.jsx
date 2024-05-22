@@ -5,8 +5,9 @@ import { PiHeartFill } from "react-icons/pi";
 import ProfileMold from '../../ImagemMold/ProfileMold.jsx'
 import { BiComment } from "react-icons/bi";
 import React, { useState } from 'react';
+import { curtirPost } from "../../../ApiFunctions/PostFunctions.jsx";
 
-const PostContainer = ({ userImageSrc, postImageSrc, userName, postDescription, likes, comments }) => {
+const PostContainer = ({ userImageSrc, postImageSrc, postID, userName, postDescription, likes, comments }) => {
   
   const [showComments, setShowComments] = useState(false);
   const [liked, setLiked] = useState(false);
@@ -18,6 +19,17 @@ const PostContainer = ({ userImageSrc, postImageSrc, userName, postDescription, 
 
   const LikeButton = () => {
     setLiked(!liked);
+    const fetchCurtirPost = async (id, curtida) => {
+      try {
+        const data = await curtirPost(id, curtida);
+      } catch (error) {
+        console.error('Erro ao curtir post:', error);
+      }
+    };
+    let curtida = 0
+    liked === true ? curtida=1 : curtida=-1
+    console.log(liked)
+    fetchCurtirPost(postID, curtida);
   }
 
   const createComment = () =>{
@@ -71,7 +83,6 @@ const PostContainer = ({ userImageSrc, postImageSrc, userName, postDescription, 
       <div className="comments-section">
         {comments.map((comment, index) => (
           <div key={index} className="comment">
-            <ProfileMold src={comment.userImageSrc} />
             <div className="comment-content">
               <h2>{comment.usuarioEmail }</h2>
               <p>{comment.texto}</p>

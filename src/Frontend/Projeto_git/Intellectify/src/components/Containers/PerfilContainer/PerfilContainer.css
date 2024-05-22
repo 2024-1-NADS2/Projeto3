@@ -18,8 +18,7 @@
 
 .perfilImage{
   position: absolute;
-  top: 50%;
-  
+  top: 15%;
 }
 
 .perfilImage img {
@@ -27,8 +26,10 @@
 }
 
 .info-block {
-flex: 1;
-margin: 0 10px; /* Margem entre os blocos de texto */
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  text-align: center;
 }
 
 .title {

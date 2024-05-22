@@ -33,6 +33,8 @@ const Perfil = () => {
       };
       fetchUserData();
       
+      console.log(userData)
+
       // Chama a função pegarTodosPosts para obter os posts
       const fetchPostsData = async (savedEmail) => {
         try {
@@ -43,7 +45,6 @@ const Perfil = () => {
         }
       };
       fetchPostsData(savedEmail);
-      console.log(savedEmail, "email salvo do login")
     }
   }, []);
 
@@ -57,7 +58,7 @@ const Perfil = () => {
         </div>
         <div className="perfilmain-column">
           <div className="perfilpostContainerFeed">
-            <PerfilContainer/>
+            <PerfilContainer userImage={userData && userData.imagem || perfilVazio}/>
             {postsPerfil.map((post, index) => (
               <PostContainer
                 key={index}
@@ -67,6 +68,7 @@ const Perfil = () => {
                 postDescription={post.texto}
                 likes={post.curtidas}
                 comments={post.comentarios}
+                postID={post.id}
               />
             ))}
           </div>

@@ -7,12 +7,12 @@ import PostContainer from '../../components/Containers/PostContainer/PostContain
 import ImagemMold from '../../components/ImagemMold/ProfileMold.jsx';
 import NewsContainer from '../../components/Containers/NewsContainer/NewsContainer.jsx';
 import logobranca from '../../assets/logo-intellectify-sem-fundo.png';
-import { IoMdImage } from "react-icons/io";
-import { HiMiniPlay } from "react-icons/hi2";
 import { pegarUsuario } from '../../ApiFunctions/UsuarioFunctions';
 import perfilVazio from '../../assets/perfilVazio.png';
 import { pegarTodosPosts } from '../../ApiFunctions/PostFunctions.jsx';
 import MenuHamburger from '../../components/MenuHamburguer/Menuburger.jsx';
+import ImageIcon from '../../components/Containers/CreatePostContainer/ImageIcon.jsx';
+import CreateIcon from '../../components/Containers/CreatePostContainer/CreateIcon.jsx';
 
 
 const Feed = () => {
@@ -20,6 +20,13 @@ const Feed = () => {
   const [userEmail, setUserEmail] = useState('');
   const [userData, setUserData] = useState(null);
   const [posts, setPosts] = useState([]);
+
+  const [imageBase64, setImageBase64] = useState(null);
+
+  const handleImageChange = (base64Image) => {
+    setImageBase64(base64Image);
+    console.log(imageBase64)
+  };
 
   useEffect(() => {
     // Recupera o email do localStorage quando o componente é montado
@@ -51,22 +58,23 @@ const Feed = () => {
     }
   }, []);
 
-  console.log("userdata", userData)
-
   return (
     <div className="feedBackgroundColor">
+      <div className='hamMenu'>
+        <div className="burgermenufeed"><MenuHamburger/></div>
+      </div>
       <div className="feedContainer">
         <div className="column">
           <NavBar userImage={userData && userData.imagem || perfilVazio}/>
-          <div className="burgermenufeed"><MenuHamburger/></div>
+          
         </div>
         <div className="main-column">
           <CreatePostContainer>   
             <ImagemMold userImage={userData && userData.imagem || perfilVazio}/>
-            <div className="textin"><TextInput type="textarea"/></div>
+            <div className="textin"><TextInput type="textarea" name="textoPost"/></div>
             <div className="image-icone">
-              <IoMdImage color="#575757"></IoMdImage>
-              <HiMiniPlay color="#575757"/>
+              <ImageIcon onImageChange={handleImageChange}/>
+              <CreateIcon onClick={handleImageChange}/>
             </div>
           </CreatePostContainer>
           <div className="postContainerFeed">
