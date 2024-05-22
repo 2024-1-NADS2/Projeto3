@@ -34,12 +34,12 @@ namespace api.Controllers
             return Ok(postsDto);
         }
 
-        [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetById([FromRoute] int id){
+        [HttpGet("{email}")]
+        public async Task<IActionResult> GetByEmail([FromRoute] string email){
             if(!ModelState.IsValid)
                 return BadRequest(ModelState);
             
-            var post = await _postRepo.GetByIdAsync(id);
+            var post = await _postRepo.GetByEmailAsync(email);
 
             if(post == null)
             {
@@ -62,7 +62,7 @@ namespace api.Controllers
 
             var postModel = postDto.ToPostFromCreate(email);
             await _postRepo.CreateAsync(postModel);
-            return CreatedAtAction(nameof(GetById), new {id = postModel.Id}, postModel.ToPostDto());
+            return CreatedAtAction(nameof(GetByEmail), new {id = postModel.Id}, postModel.ToPostDto());
         }
 
         [HttpPut]

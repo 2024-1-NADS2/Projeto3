@@ -11,7 +11,7 @@ namespace api.Interfaces
     public interface IPostRepository
     {
         Task<List<Post>> GetAllAsync(QueryObject query);
-        Task<Post?> GetByIdAsync(int id);
+        Task<Post?> GetByEmailAsync(string email);
         Task<Post> CreateAsync(Post postModel);
         Task<bool> PostExists(int id);
         Task<Post?> UpdateAsync(int id, UpdatePostRequestDto updateRequest);

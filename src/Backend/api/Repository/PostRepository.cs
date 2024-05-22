@@ -57,9 +57,9 @@ namespace api.Repository
             return await posts.Skip(skipNumber).Take(query.PageSize).ToListAsync();
         }
 
-        public async Task<Post?> GetByIdAsync(int id)
+        public async Task<Post?> GetByEmailAsync(string email)
         {
-            return await _context.Posts.Include(c => c.Comentarios).FirstOrDefaultAsync(i => i.Id == id);
+            return await _context.Posts.Include(c => c.Comentarios).FirstOrDefaultAsync(i => i.UsuarioEmail == email);
         }
 
         public Task<bool> PostExists(int id)

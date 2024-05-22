@@ -9,7 +9,7 @@ import NewsContainer from '../../components/Containers/NewsContainer/NewsContain
 import logobranca from '../../assets/logo-intellectify-sem-fundo.png';
 import { IoMdImage } from "react-icons/io";
 import { HiMiniPlay } from "react-icons/hi2";
-import { pegarUsuario } from '../../ApiFunctions/UsuarioFunctions'; // Ajuste o caminho conforme necessário
+import { pegarUsuario } from '../../ApiFunctions/UsuarioFunctions';
 import perfilVazio from '../../assets/perfilVazio.png';
 import { pegarTodosPosts } from '../../ApiFunctions/PostFunctions.jsx';
 import MenuHamburger from '../../components/MenuHamburguer/Menuburger.jsx';
@@ -19,13 +19,14 @@ const Feed = () => {
 
   const [userEmail, setUserEmail] = useState('');
   const [userData, setUserData] = useState(null);
-  const [postsData, setPostsData] = useState('');
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     // Recupera o email do localStorage quando o componente é montado
     const savedEmail = localStorage.getItem('userEmail');
     if (savedEmail) {
       setUserEmail(savedEmail);
+
       // Chama a função pegarUsuario para obter os dados do usuário
       const fetchUserData = async () => {
         try {
@@ -37,25 +38,18 @@ const Feed = () => {
       };
       fetchUserData();
       
+      // Chama a função pegarTodosPosts para obter os posts
       const fetchPostsData = async () => {
         try {
-          const posts = await pegarTodosPosts();
-          console.log(postsData)
-          setPostsData(posts);
+          const postsData = await pegarTodosPosts();
+          setPosts(postsData);
         } catch (error) {
-          console.error('Erro ao obter os posts:', error);
+          console.error("Erro ao buscar os posts:", error);
         }
       };
       fetchPostsData();
     }
   }, []);
-
-  const comments = [
-    { userName: 'João', text: 'Ótima postagem!', userImageSrc: 'https://static.wixstatic.com/media/b822d0_4617102be0c34474a879b32347084969~mv2.jpg/v1/fill/w_318,h_435,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/rb-home-1.jpg' },
-    { userName: 'Maria', text: 'Concordo plenamente.', userImageSrc: 'https://static.wixstatic.com/media/b822d0_4617102be0c34474a879b32347084969~mv2.jpg/v1/fill/w_318,h_435,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/rb-home-1.jpg' },
-    { userName: 'Carlos', text: 'Muito inspirador.', userImageSrc: 'https://static.wixstatic.com/media/b822d0_4617102be0c34474a879b32347084969~mv2.jpg/v1/fill/w_318,h_435,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/rb-home-1.jpg' },
-    { userName: 'Carlos', text: 'Muito inspirador.', userImageSrc: 'https://static.wixstatic.com/media/b822d0_4617102be0c34474a879b32347084969~mv2.jpg/v1/fill/w_318,h_435,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/rb-home-1.jpg' }
-  ];
 
   console.log("userdata", userData)
 
@@ -76,14 +70,15 @@ const Feed = () => {
             </div>
           </CreatePostContainer>
           <div className="postContainerFeed">
-          {postsData.map((post, index) => (
+          {posts.map((post, index) => (
               <PostContainer
                 key={index}
-                userImageSrc={post.userImageSrc}
-                userName={post.userName}
-                postImageSrc={post.postImageSrc}
-                likes={post.likes}
-                comments={post.comments}
+                userImageSrc={post.nome || perfilVazio}
+                userName={post.usuarioEmail}
+                postImageSrc={post.imagem}
+                postDescription={post.texto}
+                likes={post.curtidas}
+                comments={post.comentarios}
               />
             ))}
           </div>

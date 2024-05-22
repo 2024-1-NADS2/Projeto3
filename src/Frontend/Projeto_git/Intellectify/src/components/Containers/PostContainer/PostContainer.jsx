@@ -6,7 +6,7 @@ import ProfileMold from '../../ImagemMold/ProfileMold.jsx'
 import { BiComment } from "react-icons/bi";
 import React, { useState } from 'react';
 
-const PostContainer = ({ userImageSrc, postImageSrc, userName, likes, comments }) => {
+const PostContainer = ({ userImageSrc, postImageSrc, userName, postDescription, likes, comments }) => {
   
   const [showComments, setShowComments] = useState(false);
   const [liked, setLiked] = useState(false);
@@ -27,7 +27,7 @@ const PostContainer = ({ userImageSrc, postImageSrc, userName, likes, comments }
   return (
     <div className='PostContainer'>
       <div className="PostHeader">
-        <ProfileMold src={userImageSrc}/>
+        <ProfileMold userImage={userImageSrc}/>
         <h1>{userName}</h1>
       </div>
         <PostMold src={postImageSrc}/>
@@ -54,7 +54,7 @@ const PostContainer = ({ userImageSrc, postImageSrc, userName, likes, comments }
         </div>
         <div className="post-text"> 
           <h1 className="post-title">{userName}:</h1>
-          <h1 className="post-description">A “sorte” só encontra quem está preparado...</h1>
+          <h1 className="post-description">"{postDescription}</h1>
         </div>
         <div className="createSeeComment">
           {inputComment ? "qq coisa" : (
@@ -73,8 +73,8 @@ const PostContainer = ({ userImageSrc, postImageSrc, userName, likes, comments }
           <div key={index} className="comment">
             <ProfileMold src={comment.userImageSrc} />
             <div className="comment-content">
-              <h2>{comment.userName}</h2>
-              <p>{comment.text}</p>
+              <h2>{comment.usuarioEmail }</h2>
+              <p>{comment.texto}</p>
             </div>
           </div>
         ))}

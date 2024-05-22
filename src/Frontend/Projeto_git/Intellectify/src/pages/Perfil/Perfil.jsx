@@ -4,62 +4,71 @@ import NewsContainer from '../../components/Containers/NewsContainer/NewsContain
 import logobranca from '../../assets/logo-intellectify-sem-fundo.png';
 import PerfilContainer from '../../components/Containers/PerfilContainer/PerfilContainer.jsx';
 import './Perfil.css'
-
+import { pegarUsuario } from '../../ApiFunctions/UsuarioFunctions';
+import perfilVazio from '../../assets/perfilVazio.png';
+import { pegarPostsPerfil } from '../../ApiFunctions/PostFunctions.jsx';
+import React, { useEffect, useState } from 'react';
 
 
 const Perfil = () => {
 
-  const comments = [
-    { userName: 'João', text: 'Ótima postagem!', userImageSrc: 'https://static.wixstatic.com/media/b822d0_4617102be0c34474a879b32347084969~mv2.jpg/v1/fill/w_318,h_435,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/rb-home-1.jpg' },
-    { userName: 'Maria', text: 'Concordo plenamente.', userImageSrc: 'https://static.wixstatic.com/media/b822d0_4617102be0c34474a879b32347084969~mv2.jpg/v1/fill/w_318,h_435,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/rb-home-1.jpg' },
-    { userName: 'Carlos', text: 'Muito inspirador.', userImageSrc: 'https://static.wixstatic.com/media/b822d0_4617102be0c34474a879b32347084969~mv2.jpg/v1/fill/w_318,h_435,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/rb-home-1.jpg' },
-    { userName: 'Carlos', text: 'Muito inspirador.', userImageSrc: 'https://static.wixstatic.com/media/b822d0_4617102be0c34474a879b32347084969~mv2.jpg/v1/fill/w_318,h_435,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/rb-home-1.jpg' }
-  ];
+  const [userEmail, setUserEmail] = useState('');
+  const [userData, setUserData] = useState(null);
+  const [postsPerfil, setPostsPerfil] = useState([]);
+
+  useEffect(() => {
+    // Recupera o email do localStorage quando o componente é montado
+    const savedEmail = localStorage.getItem('userEmail');
+    if (savedEmail) {
+      setUserEmail(savedEmail);
+
+      // Chama a função pegarUsuario para obter os dados do usuário
+      const fetchUserData = async () => {
+        try {
+          const data = await pegarUsuario(savedEmail);
+          setUserData(data);
+        } catch (error) {
+          console.error('Erro ao obter os dados do usuário:', error);
+        }
+      };
+      fetchUserData();
+      
+      // Chama a função pegarTodosPosts para obter os posts
+      const fetchPostsData = async (savedEmail) => {
+        try {
+          const postsData = await pegarPostsPerfil(savedEmail);
+          setPostsPerfil(postsData);
+        } catch (error) {
+          console.error("Erro ao buscar os posts:", error);
+        }
+      };
+      fetchPostsData(savedEmail);
+      console.log(savedEmail, "email salvo do login")
+    }
+  }, []);
+
+
 
   return (
     <div className="perfilBackgroundColor">
       <div className="perfilcont">
         <div className="perfilcolumn">
-          <NavBar/>
+          <NavBar userImage={userData && userData.imagem || perfilVazio}/>
         </div>
         <div className="perfilmain-column">
           <div className="perfilpostContainerFeed">
             <PerfilContainer/>
-            <PostContainer
-              userImageSrc="https://static.wixstatic.com/media/b822d0_4617102be0c34474a879b32347084969~mv2.jpg/v1/fill/w_318,h_435,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/rb-home-1.jpg"
-              userName="Guilherme"
-              postImageSrc="https://static.wixstatic.com/media/b822d0_8e8436d144ff4c3abb6bed1db62ea354~mv2.png/v1/fill/w_1854,h_446,al_t,q_90,enc_auto/b822d0_8e8436d144ff4c3abb6bed1db62ea354~mv2.png"
-              likes="10"
-              comments={comments}
-            />
-            <PostContainer
-              userImageSrc="https://static.wixstatic.com/media/b822d0_4617102be0c34474a879b32347084969~mv2.jpg/v1/fill/w_318,h_435,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/rb-home-1.jpg"
-              userName="Guilherme"
-              postImageSrc="https://static.wixstatic.com/media/b822d0_8e8436d144ff4c3abb6bed1db62ea354~mv2.png/v1/fill/w_1854,h_446,al_t,q_90,enc_auto/b822d0_8e8436d144ff4c3abb6bed1db62ea354~mv2.png"
-              likes="10"
-              comments={comments}
-            />
-            <PostContainer
-              userImageSrc="https://static.wixstatic.com/media/b822d0_4617102be0c34474a879b32347084969~mv2.jpg/v1/fill/w_318,h_435,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/rb-home-1.jpg"
-              userName="Guilherme"
-              postImageSrc="https://static.wixstatic.com/media/b822d0_8e8436d144ff4c3abb6bed1db62ea354~mv2.png/v1/fill/w_1854,h_446,al_t,q_90,enc_auto/b822d0_8e8436d144ff4c3abb6bed1db62ea354~mv2.png"
-              likes="10"
-              comments={comments}
-            />
-            <PostContainer
-              userImageSrc="https://static.wixstatic.com/media/b822d0_4617102be0c34474a879b32347084969~mv2.jpg/v1/fill/w_318,h_435,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/rb-home-1.jpg"
-              userName="Guilherme"
-              postImageSrc="https://static.wixstatic.com/media/b822d0_8e8436d144ff4c3abb6bed1db62ea354~mv2.png/v1/fill/w_1854,h_446,al_t,q_90,enc_auto/b822d0_8e8436d144ff4c3abb6bed1db62ea354~mv2.png"
-              likes="10"
-              comments={comments}
-            />
-            <PostContainer
-              userImageSrc="https://static.wixstatic.com/media/b822d0_4617102be0c34474a879b32347084969~mv2.jpg/v1/fill/w_318,h_435,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/rb-home-1.jpg"
-              userName="Guilherme"
-              postImageSrc="https://static.wixstatic.com/media/b822d0_8e8436d144ff4c3abb6bed1db62ea354~mv2.png/v1/fill/w_1854,h_446,al_t,q_90,enc_auto/b822d0_8e8436d144ff4c3abb6bed1db62ea354~mv2.png"
-              likes="10"
-              comments={comments}
-            />
+            {postsPerfil.map((post, index) => (
+              <PostContainer
+                key={index}
+                userImageSrc={post.nome || perfilVazio}
+                userName={post.usuarioEmail}
+                postImageSrc={post.imagem}
+                postDescription={post.texto}
+                likes={post.curtidas}
+                comments={post.comentarios}
+              />
+            ))}
           </div>
         </div>
         <div className="perfilcolumn">
