@@ -45,6 +45,11 @@ namespace api.Repository
         {
             var posts = _context.Posts.Include(c => c.Comentarios).AsQueryable();
 
+            if(!string.IsNullOrWhiteSpace(query.Nome))
+            {
+                posts = posts.Where(u => u.UsuarioEmail.Contains(query.Nome));
+            }
+
             if(!string.IsNullOrWhiteSpace(query.SortBy))
             {
                 if(query.SortBy.Equals("Criado_em", StringComparison.OrdinalIgnoreCase))
@@ -57,9 +62,9 @@ namespace api.Repository
             return await posts.Skip(skipNumber).Take(query.PageSize).ToListAsync();
         }
 
-        public async Task<Post?> GetByEmailAsync(string email)
+        public async Task<Post?> GetByIdAsync(int id)
         {
-            return await _context.Posts.Include(c => c.Comentarios).FirstOrDefaultAsync(i => i.UsuarioEmail == email);
+            return await _context.Posts.Include(c => c.Comentarios).FirstOrDefaultAsync(i => i.Id == id);
         }
 
         public Task<bool> PostExists(int id)

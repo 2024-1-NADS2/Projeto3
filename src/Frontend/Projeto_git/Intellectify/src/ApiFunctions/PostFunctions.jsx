@@ -50,6 +50,8 @@ export const pegarPostsPerfil = async (email) => {
 const fetchPostsData = async (savedEmail) => {
   try {
     const postsData = await pegarPostsPerfil(savedEmail);
+    console.log("tentandoi")
+    console.log(postsData)
     return postsData;
   } catch (error) {
     console.error("Erro ao buscar os posts:", error);

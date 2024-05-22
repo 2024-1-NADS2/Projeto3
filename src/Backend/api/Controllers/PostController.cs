@@ -32,14 +32,15 @@ namespace api.Controllers
             var postsDto = posts.Select(s => s.ToPostDto());
         
             return Ok(postsDto);
+            
         }
 
-        [HttpGet("{email}")]
-        public async Task<IActionResult> GetByEmail([FromRoute] string email){
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetById([FromRoute] int id){
             if(!ModelState.IsValid)
                 return BadRequest(ModelState);
             
-            var post = await _postRepo.GetByEmailAsync(email);
+            var post = await _postRepo.GetByIdAsync(id);
 
             if(post == null)
             {
@@ -62,7 +63,7 @@ namespace api.Controllers
 
             var postModel = postDto.ToPostFromCreate(email);
             await _postRepo.CreateAsync(postModel);
-            return CreatedAtAction(nameof(GetByEmail), new {id = postModel.Id}, postModel.ToPostDto());
+            return CreatedAtAction(nameof(GetById), new {id = postModel.Id}, postModel.ToPostDto());
         }
 
         [HttpPut]
