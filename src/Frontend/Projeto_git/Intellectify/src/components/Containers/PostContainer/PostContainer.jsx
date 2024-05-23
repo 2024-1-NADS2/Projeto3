@@ -19,17 +19,6 @@ const PostContainer = ({ userImageSrc, postImageSrc, postID, userName, postDescr
 
   const LikeButton = () => {
     setLiked(!liked);
-    const fetchCurtirPost = async (id, curtida) => {
-      try {
-        const data = await curtirPost(id, curtida);
-      } catch (error) {
-        console.error('Erro ao curtir post:', error);
-      }
-    };
-    let curtida = 0
-    liked === true ? curtida=1 : curtida=-1
-    console.log(liked)
-    fetchCurtirPost(postID, curtida);
   }
 
   const createComment = () =>{
@@ -66,7 +55,7 @@ const PostContainer = ({ userImageSrc, postImageSrc, postID, userName, postDescr
         </div>
         <div className="post-text"> 
           <h1 className="post-title">{userName}:</h1>
-          <h1 className="post-description">"{postDescription}</h1>
+          <h1 className="post-description">{postDescription}</h1>
         </div>
         <div className="createSeeComment">
           {inputComment ? "qq coisa" : (
