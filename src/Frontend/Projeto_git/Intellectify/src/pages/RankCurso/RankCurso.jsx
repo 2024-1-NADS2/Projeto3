@@ -7,12 +7,16 @@ import Economia from '../../assets/econo.png'
 import MedVet from '../../assets/medivet.png'
 import RankContainer from '../../components/Containers/RankContainer/RankContainer'
 import NavBar from '../../components/NavBar/NavBar'
+import MenuHamburger from '../../components/MenuHamburguer/Menuburger.jsx';
 
 
 const RankCurso = () => {
 
     return (
         <div className="background">
+            <div className='hamMenu'>
+                <div className="burgermenufeed"><MenuHamburger/></div>
+            </div>
             <div className="rankContainer">
                 <div className="column"><NavBar/></div>
                 <div class="container-facul">

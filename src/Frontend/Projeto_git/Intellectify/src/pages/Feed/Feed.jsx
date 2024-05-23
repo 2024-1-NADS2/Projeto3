@@ -21,13 +21,6 @@ const Feed = () => {
   const [userData, setUserData] = useState(null);
   const [posts, setPosts] = useState([]);
 
-  const [imageBase64, setImageBase64] = useState(null);
-
-  const handleImageChange = (base64Image) => {
-    setImageBase64(base64Image);
-    console.log(imageBase64)
-  };
-
   useEffect(() => {
     // Recupera o email do localStorage quando o componente é montado
     const savedEmail = localStorage.getItem('userEmail');
@@ -57,6 +50,20 @@ const Feed = () => {
       fetchPostsData();
     }
   }, []);
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            setBase64String(reader.result);
+        };
+        reader.readAsDataURL(file);
+    } else {
+        alert("Por favor, selecione um arquivo primeiro.");
+    }
+};
   const handlePost = async () => {
     const textoPost = document.querySelector('input[name="textoPost"]').value;
     const imagemPost = document.querySelector('input[name="imagemPost"]').value;
@@ -82,14 +89,13 @@ const Feed = () => {
       <div className="feedContainer">
         <div className="column">
           <NavBar userImage={userData && userData.imagem || perfilVazio}/>
-          
         </div>
         <div className="main-column">
           <CreatePostContainer>   
             <ImagemMold userImage={userData && userData.imagem || perfilVazio}/>
             <div className="textin"><TextInput type="textarea" name="textoPost"/></div>
             <div className="image-icone">
-              <ImageIcon onImageChange={handleImageChange} name="imagemPost"/>
+              <ImageIcon name="imagemPost" onChange={handleFileChange}/>
               <CreateIcon onClick={handlePost}/>
             </div>
           </CreatePostContainer>
@@ -103,7 +109,6 @@ const Feed = () => {
                 postDescription={post.texto}
                 likes={post.curtidas}
                 comments={post.comentarios}
-                postID={post.id}
               />
             ))}
           </div>

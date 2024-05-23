@@ -8,6 +8,7 @@ import { pegarUsuario } from '../../ApiFunctions/UsuarioFunctions';
 import perfilVazio from '../../assets/perfilVazio.png';
 import { pegarPostsPerfil } from '../../ApiFunctions/PostFunctions.jsx';
 import React, { useEffect, useState } from 'react';
+import MenuHamburger from '../../components/MenuHamburguer/Menuburger.jsx';
 
 
 const Perfil = () => {
@@ -52,6 +53,9 @@ const Perfil = () => {
 
   return (
     <div className="perfilBackgroundColor">
+      <div className='hamMenu'>
+        <div className="burgermenufeed"><MenuHamburger/></div>
+      </div>
       <div className="perfilcont">
         <div className="perfilcolumn">
           <NavBar userImage={userData && userData.imagem || perfilVazio}/>

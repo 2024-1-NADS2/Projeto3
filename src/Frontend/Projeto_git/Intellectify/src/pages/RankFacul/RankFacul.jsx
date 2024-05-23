@@ -7,12 +7,16 @@ import Ufabc from '../../assets/ufabc.png'
 import Ifsp from '../../assets/ifsp.png'
 import RankContainer from '../../components/Containers/RankContainer/RankContainer'
 import NavBar from '../../components/NavBar/NavBar'
+import MenuHamburger from '../../components/MenuHamburguer/Menuburger.jsx';
 
 
 const RankFacul = () => {
 
     return (
         <div className="background">
+            <div className='hamMenu'>
+                <div className="burgermenufeed"><MenuHamburger/></div>
+            </div>
             <div className="rankContainer">
                 <div className="navcolumn"><NavBar/></div>
                 <div class="container-facul">

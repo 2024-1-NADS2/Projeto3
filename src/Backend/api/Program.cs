@@ -29,7 +29,7 @@ builder.Services.AddScoped<IComentarioRepository, ComentarioRepository>();
 builder.Services.AddCors(op => {
     // CORS policy for the React application running locally
     op.AddPolicy("ApiIntellectify", policyBuilder => {
-        policyBuilder.WithOrigins("http://localhost:5173")  // Remove trailing slash
+        policyBuilder.WithOrigins("https://intellectify.netlify.app/")  // Remove trailing slash
                      .AllowAnyHeader()
                      .AllowAnyMethod()  // Allow any HTTP method
                      .AllowCredentials();

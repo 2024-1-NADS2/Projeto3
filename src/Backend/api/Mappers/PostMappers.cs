@@ -9,7 +9,7 @@ namespace api.Mappers
 {
     public static class PostMappers
     {
-        public static PostDto ToPostDto(this Post postModel Usuario usuarioModel)
+        public static PostDto ToPostDto(this Post postModel)
         {
             return new PostDto
             {
@@ -19,8 +19,6 @@ namespace api.Mappers
                 Curtidas = postModel.Curtidas,
                 Criado_em = postModel.Criado_em,
                 UsuarioEmail = postModel.UsuarioEmail,
-                UsuarioNome = postModel.Nome,
-                UsuarioImagem = postModel.Imagem,
                 Comentarios = postModel.Comentarios.Select(c => c.ToComentarioDto()).ToList(),
             };
         }
