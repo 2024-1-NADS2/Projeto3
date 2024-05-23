@@ -72,6 +72,7 @@ namespace api.Controllers
 
             var comentarioModel = comentarioDto.ToComentarioFromCreate(email, postId);
             await _comentarioRepo.CreateAsync(comentarioModel);
+            Console.WriteLine(comentarioModel);
             return CreatedAtAction(nameof(GetById), new {id = comentarioModel.Id}, comentarioModel.ToComentarioDto());
         }
 

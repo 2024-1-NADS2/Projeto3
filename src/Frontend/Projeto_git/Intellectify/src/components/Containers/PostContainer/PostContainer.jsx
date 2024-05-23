@@ -6,6 +6,7 @@ import ProfileMold from '../../ImagemMold/ProfileMold.jsx'
 import { BiComment } from "react-icons/bi";
 import { useState } from 'react';
 import { curtirPost } from "../../../ApiFunctions/PostFunctions.jsx";
+import CommentBox from "../../CommentBox/CommentBox.jsx";
 
 const PostContainer = ({ userImageSrc, postImageSrc, postID, userName, postDescription, likes, comments }) => {
   
@@ -58,7 +59,7 @@ const PostContainer = ({ userImageSrc, postImageSrc, postID, userName, postDescr
           <h1 className="post-description">{postDescription}</h1>
         </div>
         <div className="createSeeComment">
-          {inputComment ? "qq coisa" : (
+          {inputComment ? <CommentBox postId={postID}/> : (
             <p className="create-comment" onClick={createComment}>
             Adicionar um comentário...
             </p>

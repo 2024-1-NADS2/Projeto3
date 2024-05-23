@@ -27,6 +27,7 @@ namespace api.Mappers
             return new Comentario
             {
                 Texto = comentarioDto.Texto,
+                Imagem = "",
                 PostId = postId,
                 UsuarioEmail = email
             };

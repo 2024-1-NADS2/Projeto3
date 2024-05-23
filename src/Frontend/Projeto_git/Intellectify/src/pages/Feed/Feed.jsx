@@ -102,6 +102,7 @@ const Feed = () => {
                 postDescription={post.texto}
                 likes={post.curtidas}
                 comments={post.comentarios}
+                postID={post.id}
               />
             ))}
           </div>
