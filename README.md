@@ -8,12 +8,12 @@
 
 ## Grupo Aulinhas
 
-## :globe_with_meridians: Site:
-<a href="https://intellectify.netlify.app/">Intellectify</a>
-
 ## Integrantes: <a href="https://github.com/deGuicS">Guilherme Carvalho da Silva</a>, <a href="https://www.linkedin.com/in/gustavo-henrique-santos-araujo-543853246/?originalSubdomain=br)/">Gustavo Henrique</a>, <a href="https://www.linkedin.com/in/renan-teixeira-62b550238/">Renan Teixeira Pinheiro</a>, <a href="https://www.linkedin.com/in/matheus-de-medeiros-5516a02a9/">Matheus de Medeiros Takaki</a>
 
 ## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Dr. Victor Bruno Alexander Rosetti de Quiroz</a>, <a href="https://www.linkedin.com/in/adriano-valente-534576135/">Adriano Felix Valente</a>
+
+## :globe_with_meridians: Site:
+<a href="https://intellectify.netlify.app/">Intellectify</a>
 
 ## Descrição
 
