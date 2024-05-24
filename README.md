@@ -33,6 +33,30 @@ Intellectify é uma rede social voltada exclusivamente para estudantes, proporci
 <a href="https://www.figma.com/design/t81qVEwm07wqqex950LXah/Prot%C3%B3tipo-Rede-Social-Intelectify?node-id=0-1&t=6u8cdZ7qof7Twiif-1">Figma</a>
 
 ## 🗃 Histórico de lançamentos
+* 2.4 - 24/05/2024
+    * Integrações e Ajustes Finais no Projeto.
+* 2.3 - 21/05/2024
+    * Front-end Finalizado em React e Online no Netlify
+* 2.2 - 15/05/2024
+    * API Finalizada e Online na Azure
+* 2.1 - 09/05/2024
+    * Início da Criação da API em C#
+* 2.1 - 09/05/2024
+    * Início da Criação da API em C#
+* 2.0 - 07/05/2024
+    * Criação da Aplicação em React
+    * Paginas Iniciais Transformadas em React
+* 1.1 - 24/04/2024
+    * Criação e Upload do Banco de Dados na Azure
+    * Desenho do Banco de Dados Finalizado
+* 1.0 - 03/04/2024
+    * Paginas Iniciais em HTMl e CSS
+* 0.2 - 24/03/2024
+    * Design Inicial do Figma Finalizado
+* 0.1 - 10/03/2024
+    * Trabalho em andamento
+    * Início de Levantamento de Funcionalidades
+    * Criação da Identidade do Projeto
 
 
 ## 📋 Licença/License
