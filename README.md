@@ -30,7 +30,7 @@ Intellectify é uma rede social voltada exclusivamente para estudantes, proporci
 |readme.md<br>
 
 ## 🗃 Design
-<a href="https://github.com/deGuicS](https://www.figma.com/design/t81qVEwm07wqqex950LXah/Prot%C3%B3tipo-Rede-Social-Intelectify?node-id=0-1&t=6u8cdZ7qof7Twiif-1">Figma/a>
+<a href="https://www.figma.com/design/t81qVEwm07wqqex950LXah/Prot%C3%B3tipo-Rede-Social-Intelectify?node-id=0-1&t=6u8cdZ7qof7Twiif-1">Figma</a>
 
 ## 🗃 Histórico de lançamentos
 
