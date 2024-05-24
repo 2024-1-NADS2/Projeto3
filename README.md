@@ -12,6 +12,8 @@
 
 ## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Dr. Victor Bruno Alexander Rosetti de Quiroz</a>, <a href="https://www.linkedin.com/in/adriano-valente-534576135/">Adriano Felix Valente</a>
 
+<br>
+
 ## :globe_with_meridians: Site:
 <a href="https://intellectify.netlify.app/">Intellectify</a>
 
@@ -20,8 +22,6 @@
 <p>
 Intellectify é uma rede social voltada exclusivamente para estudantes, proporcionando um ambiente colaborativo e enriquecedor onde conhecimentos são compartilhados e novas conexões acadêmicas são estabelecidas. Esta plataforma foi desenvolvida com o intuito de facilitar a troca de informações, a criação de grupos de estudo e o apoio mútuo entre estudantes de diversas áreas do conhecimento.
 </p>
-
-<br><br>
 
 ## 🛠 Estrutura de pastas
 
