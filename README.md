@@ -24,8 +24,9 @@ Intellectify é uma rede social voltada exclusivamente para estudantes, proporci
 ## 🛠 Estrutura de pastas
 
 -Raiz<br>
-|-->imagens<br>
-|-->src<br>
+|-->Documentos<br>
+|-->Imagens<br>
+|-->Src<br>
   &emsp;|-->Frontend<br>
   &emsp;|-->Backend<br>
 |readme.md<br>
