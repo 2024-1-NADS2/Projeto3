@@ -29,6 +29,15 @@ Intellectify é uma rede social voltada exclusivamente para estudantes, proporci
   &emsp;|-->Backend<br>
 |readme.md<br>
 
+## 💻 Configuração para Desenvolvimento
+
+Abrir o terminal do visual studio e chegar no diretório do projeto em react
+Após isto rode os seguintes comandos:
+
+npm install
+npm run dev
+
+
 ## :art: Design
 <a href="https://www.figma.com/design/t81qVEwm07wqqex950LXah/Prot%C3%B3tipo-Rede-Social-Intelectify?node-id=0-1&t=6u8cdZ7qof7Twiif-1">Figma</a>
 
