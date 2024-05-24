@@ -12,8 +12,6 @@
 
 ## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Dr. Victor Bruno Alexander Rosetti de Quiroz</a>, <a href="https://www.linkedin.com/in/adriano-valente-534576135/">Adriano Felix Valente</a>
 
-<br>
-
 ## :globe_with_meridians: Site:
 <a href="https://intellectify.netlify.app/">Intellectify</a>
 
